@@ -1,0 +1,74 @@
+.DraftEditor-root {
+  width: 100%;
+}
+.editor-warper {
+  width: 98%;
+  padding: 20px 1%;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+.editor-container {
+  display: flex;
+  min-height: 5em;
+  border-radius: 0 0 3px 3px;
+  background-color: #fff;
+  padding: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: Georgia, serif;
+  box-shadow: 0px 0px 3px 1px rgba(36, 36, 36, 0.17);
+  word-break: break-all;
+}
+.toolbar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px 7px;
+  margin-bottom: 1px;
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0px 0px 3px 1px rgba(15, 15, 15, 0.17);
+}
+.editor-blockquote {
+  border-left: 5px solid #eee;
+  color: #666;
+  font-family: Hoefler Text, Georgia, serif;
+  font-style: italic;
+  margin: 16px 0;
+  padding: 10px 20px;
+}
+.editor-code-block {
+  width: fit-content;
+  max-width: 90%;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-family: Inconsolata, Menlo, Consolas, monospace;
+  font-size: 16px;
+  padding: 20px;
+  overflow-x: auto;
+}
+.toolbar-controls-box {
+  display: flex;
+}
+.toolbar-item {
+  width: fit-content;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  color: #868686;
+  font-size: 20px;
+  font-family: Oxygen, sans-serif;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+.toolbar-item:hover {
+  color: #000000;
+}
+.toolbar-item-active {
+  transform: translateY(1px);
+  color: #000000;
+  background-color: #dfdfdf;
+}
+

@@ -1,0 +1,194 @@
+
+.resize-view-box img {  
+  -webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+.resize-center:before,
+.resize-center:after {
+  background-color: #39f;
+  content: " ";
+  display: block;
+  position: absolute;
+}
+.resize-center:before {
+  height: 1px;
+  left: -10px;
+  top: 0;
+  width: 20px;
+}
+.resize-center:after {
+  height: 20px;
+  left: 0;
+  top: -10px;
+  width: 1px;
+}
+.resize-face,
+.resize-line,
+.resize-point {
+  display: block;
+  height: 100%;
+  /* opacity: 0.1; */
+  position: absolute;
+  width: 100%;
+}
+.resize-face {
+  background-color: #3399ff2d;
+  left: 0;
+  top: 0;
+}
+.resize-line {
+  background-color: #39f;
+}
+.resize-line.line-e {
+  cursor: ew-resize;
+  right: -3px;
+  top: 0;
+  width: 3px;
+}
+.resize-line.line-n {
+  cursor: ns-resize;
+  height: 3px;
+  left: 0;
+  top: -3px;
+}
+.resize-line.line-w {
+  cursor: ew-resize;
+  left: -3px;
+  top: 0;
+  width: 3px;
+}
+.resize-line.line-s {
+  bottom: -3px;
+  cursor: ns-resize;
+  height: 3px;
+  left: 0;
+}
+.resize-point {
+  background-color: #0579ec;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+.resize-point:before {
+  content: "";
+  display: table;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: black;
+  opacity: 0.8;
+  z-index: 11;
+  position: absolute;
+  top: calc(50% - 4px);
+  left: calc(50% - 4px);
+}
+.resize-point.point-e {
+  cursor: ew-resize;
+  margin-top: -10px;
+  right: -10px;
+  top: 50%;
+}
+.resize-point.point-n {
+  cursor: ns-resize;
+  left: 50%;
+  margin-left: -10px;
+  top: -10px;
+}
+.resize-point.point-w {
+  cursor: ew-resize;
+  left: -10px;
+  margin-top: -10px;
+  top: 50%;
+}
+.resize-point.point-s {
+  bottom: -10px;
+  cursor: s-resize;
+  left: 50%;
+  margin-left: -10px;
+}
+.resize-point.point-ne {
+  cursor: nesw-resize;
+  right: -10px;
+  top: -10px;
+}
+.resize-point.point-nw {
+  cursor: nwse-resize;
+  left: -10px;
+  top: -10px;
+}
+.resize-point.point-sw {
+  bottom: -10px;
+  cursor: nesw-resize;
+  left: -10px;
+}
+.resize-point.point-se {
+  bottom: -10px;
+  cursor: nwse-resize;
+  height: 20px;
+  right: -10px;
+  width: 20px;
+}
+
+.resize-alignment-popup {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 2px;
+  width: 100%;
+  cursor: pointer;
+  z-index: 10;
+  top: 0px;
+  background: rgba(240, 248, 255, 0);
+  height: 100%;
+}
+.alignment-left {
+  justify-content: flex-start;
+}
+.resize-alignment-left {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-right: 40px solid rgba(56, 56, 56, 0.589);
+}
+.resize-alignment-left:hover {
+  border-right: 40px solid rgb(56, 56, 56);
+}
+.resize-alignment-right {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 40px solid rgba(56, 56, 56, 0.589);
+}
+.resize-alignment-right:hover {
+  border-left: 40px solid rgb(56, 56, 56);
+}
+.resize-alignment-center {
+  width: 0;
+  height: 0;
+  border: 40px solid transparent;
+  border-bottom-color: rgb(56, 56, 56, 0.589);
+  position: relative;
+  top: -40px;
+}
+.resize-alignment-center:after {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 40px;
+  width: 0;
+  height: 0;
+  border: 40px solid transparent;
+  border-top-color: rgb(56, 56, 56, 0.589);
+}
+.resize-alignment-center:hover {
+  border-bottom-color: rgb(56, 56, 56);
+}
+.resize-alignment-center:hover:after {
+  border-top-color: rgb(56, 56, 56);
+}

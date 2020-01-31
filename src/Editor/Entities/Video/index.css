@@ -1,0 +1,22 @@
+.video-options {
+  position: relative;
+  display: flex;
+}
+.video-wrapper {
+  position: relative;
+}
+
+.video-alignment-popup {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 2px;
+  width: 100%;
+  cursor: pointer;
+  z-index: 10;
+  top: 0px;
+  background: rgba(240, 248, 255, 0);
+  height: 100%;
+}
+

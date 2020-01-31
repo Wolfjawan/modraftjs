@@ -1,0 +1,74 @@
+import React, { Component } from "react";
+import { AtomicBlockUtils } from "draft-js";
+import VideoLayouts from "./Component";
+
+class VideoControl extends Component {
+  state = {
+    expanded: false
+  };
+  onExpandEvent = () => {
+    const { expanded } = this.state;
+    this.setState({
+      expanded: !expanded
+    });
+    this.props.isFocusedHandler(false);
+  };
+
+  doExpand = () => {
+    this.setState({
+      expanded: true
+    });
+  };
+
+  doCollapse = () => {
+    this.setState({
+      expanded: false
+    });
+  };
+
+  expandCollapse = () => {
+    this.setState({
+      expanded: false
+    });
+  };
+
+  addVideo = (videoCode, height, width, title) => {
+    const { editorState, onChange } = this.props;
+    const entityKey = editorState
+      .getCurrentContent()
+      .createEntity("video", "IMMUTABLE", {
+        videoCode,
+        height,
+        width,
+        title
+      })
+      .getLastCreatedEntityKey();
+    const newEditorState = AtomicBlockUtils.insertAtomicBlock(
+      editorState,
+      entityKey,
+      " "
+    );
+    onChange(newEditorState);
+    this.doCollapse();
+  };
+
+  UNSAFE_componentWillReceiveProps(newProps) {
+    if (newProps.isFocused) {
+      this.doCollapse();
+    }
+  }
+  render() {
+    const { expanded } = this.state;
+    return (
+      <VideoLayouts
+        onChange={this.addVideo}
+        expanded={expanded}
+        onExpandEvent={this.onExpandEvent}
+        doExpand={this.doExpand}
+        doCollapse={this.doCollapse}
+      />
+    );
+  }
+}
+
+export default VideoControl;

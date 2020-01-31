@@ -1,0 +1,39 @@
+.toolbar-controls-box-headers-btn {
+    min-width: 100px;
+    background-color: #ffffff00;
+    color: #868686;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    margin-right: 12px;
+  }
+  .toolbar-controls-box-headers {
+    position: relative;
+    display: inline-block;
+  }
+  .toolbar-controls-box-headers-content {
+    min-width: 100px;
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    padding: 6px;
+    background-color: #f1f1f1;
+    border: 1px solid #696868;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .toolbar-controls-box-headers-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .toolbar-controls-box-headers-content a:hover {
+    background-color: #ddd;
+  }
+  .toolbar-controls-box-headers:hover .toolbar-controls-box-headers-btn {
+    color: #000000;
+  }
+  

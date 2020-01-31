@@ -1,0 +1,186 @@
+.toolbar-controls-video-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.toolbar-controls-video-modal {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 235px;
+  border: 1px solid #aaaaaa;
+  padding: 15px;
+  border-radius: 2px;
+  z-index: 100;
+  background-color: #f1f1f1;
+}
+.toolbar-controls-video-modal-header {
+  font-size: 15px;
+  margin: 10px 0;
+  display: flex;
+}
+.toolbar-controls-video-modal-header-option {
+  width: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.toolbar-controls-video-modal-header-label {
+  width: 80px;
+  background: #f1f1f1;
+  border: 1px solid #f1f1f1;
+  margin-top: 5px;
+}
+.toolbar-controls-video-modal-header-label-highlighted {
+  background: #6eb8d4;
+  border-bottom: 2px solid #0a66b7;
+}
+.toolbar-controls-video-modal-upload-option {
+  width: 100%;
+  color: gray;
+  cursor: pointer;
+  display: flex;
+  border: none;
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+  outline: 2px dashed gray;
+  outline-offset: -10px;
+  margin: 10px 0;
+  padding: 9px 0;
+}
+.toolbar-controls-video-modal-upload-option-highlighted {
+  outline: 2px dashed #0a66b7;
+}
+.toolbar-controls-video-modal-upload-option-label {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.toolbar-controls-video-modal-upload-option-label span {
+  padding: 0 20px;
+}
+.toolbar-controls-video-modal-upload-option-video-preview {
+  max-width: 100%;
+  max-height: 200px;
+}
+.toolbar-controls-video-modal-upload-option-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.toolbar-controls-video-modal-code {
+  display: flex;
+  align-items: center;
+}
+.toolbar-controls-video-modal-url-input {
+  width: 90%;
+  height: 35px;
+  margin: 15px 0 12px;
+  border: 1px solid #d3d2d2;
+  border-radius: 2px;
+  font-size: 15px;
+  padding: 0 5px;
+}
+.toolbar-controls-video-modal-btn-section {
+  margin: 10px auto 0;
+}
+.toolbar-controls-video-modal-url-input:focus {
+  outline: none;
+}
+.toolbar-controls-video-modal-btn {
+  margin: 0 5px;
+  width: 75px;
+  height: 30px;
+  border: 1px solid #f1f1f1;
+  border-radius: 2px;
+  cursor: pointer;
+  background: white;
+  text-transform: capitalize;
+}
+.toolbar-controls-video-modal-btn:hover {
+  box-shadow: 1px 1px 0px #bfbdbd;
+}
+.toolbar-controls-video-modal-btn:active {
+  box-shadow: 1px 1px 0px #bfbdbd inset;
+}
+.toolbar-controls-video-modal-btn:focus {
+  outline: none !important;
+}
+.toolbar-controls-video-modal-btn:disabled {
+  background: #ece9e9;
+}
+.toolbar-controls-video-modal-spinner {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+.toolbar-controls-video-modal-title-input {
+  width: 70%;
+  height: 20px;
+  border: 1px solid #d3d2d2;
+  border-radius: 2px;
+  font-size: 12px;
+  margin-left: 5px;
+  padding-left: 5px;
+}
+.toolbar-controls-video-modal-title-input:focus {
+  outline: none;
+}
+.toolbar-controls-video-modal-title-lbl {
+  font-size: 12px;
+}
+.toolbar-controls-video-modal-size {
+  align-items: center;
+  display: flex;
+  margin: 8px 0;
+  justify-content: space-between;
+}
+.toolbar-controls-video-modal-size-input {
+  width: 40%;
+  height: 20px;
+  border: 1px solid #d3d2d2;
+  border-radius: 2px;
+  font-size: 12px;
+  padding-left: 5px;
+}
+.toolbar-controls-video-modal-size-input:focus {
+  outline: none;
+}
+.toolbar-controls-video-mandatory-sign {
+  color: red;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.toolbar-controls-video-code-example span {
+  cursor: pointer;
+  color: #0400ff;
+}
+.toolbar-controls-video-code-example div {
+  display: block;
+  width: 95%;
+  word-break: break-all;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d2d2;
+  border-radius: 5px;
+  padding: 5px;
+}
+.toolbar-controls-video-code-example h5 {
+  word-break: break-all;
+}
+.toolbar-controls-video-code-example-steps {
+  word-break: normal;
+}
