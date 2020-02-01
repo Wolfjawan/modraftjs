@@ -1,10 +1,9 @@
-
-.resize-view-box img {  
+.resize-view-box img {
   -webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--o-user-select: none;
-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 .resize-center:before,
 .resize-center:after {
@@ -153,26 +152,26 @@ user-select: none;
   height: 0;
   border-top: 40px solid transparent;
   border-bottom: 40px solid transparent;
-  border-right: 40px solid rgba(56, 56, 56, 0.589);
+  border-right: 40px solid #2c2c2c96;
 }
 .resize-alignment-left:hover {
-  border-right: 40px solid rgb(56, 56, 56);
+  border-right: 40px solid #2c2c2c;
 }
 .resize-alignment-right {
   width: 0;
   height: 0;
   border-top: 40px solid transparent;
   border-bottom: 40px solid transparent;
-  border-left: 40px solid rgba(56, 56, 56, 0.589);
+  border-left: 40px solid #2c2c2c96;
 }
 .resize-alignment-right:hover {
-  border-left: 40px solid rgb(56, 56, 56);
+  border-left: 40px solid #2c2c2c;
 }
 .resize-alignment-center {
   width: 0;
   height: 0;
   border: 40px solid transparent;
-  border-bottom-color: rgb(56, 56, 56, 0.589);
+  border-bottom-color: #2c2c2c96;
   position: relative;
   top: -40px;
 }
@@ -184,11 +183,11 @@ user-select: none;
   width: 0;
   height: 0;
   border: 40px solid transparent;
-  border-top-color: rgb(56, 56, 56, 0.589);
+  border-top-color: #2c2c2c96;
 }
 .resize-alignment-center:hover {
-  border-bottom-color: rgb(56, 56, 56);
+  border-bottom-color: #2c2c2c;
 }
 .resize-alignment-center:hover:after {
-  border-top-color: rgb(56, 56, 56);
+  border-top-color: #2c2c2c;
 }

@@ -3,6 +3,7 @@ import "./index.css";
 const html = document.getElementsByTagName("html")[0];
 
 class MediaResize extends Component {
+  _isMounted = false;
   state = {
     height: 0,
     width: 0,
@@ -11,8 +12,26 @@ class MediaResize extends Component {
     mediaToTop: "",
     marginTop: 0,
     marginLeft: 0,
-    src: this.props.src,
+    src: "",
     alignment: ""
+  };
+  UNSAFE_componentWillMount() {
+    this._isMounted = true;
+  }
+  componentDidMount() {
+    const { width, height, src, alignment } = this.props;
+    this.updateState({
+      width: parseInt(width),
+      height: parseInt(height),
+      src,
+      alignment
+    });
+  }
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+  updateState = newState => {
+    this._isMounted && this.setState({ ...newState });
   };
   onMouseDown = (e, mouseDownAction) => {
     const { x, y } = e.nativeEvent;
@@ -41,7 +60,7 @@ class MediaResize extends Component {
     html.removeEventListener("mousemove", this.onMouseMove);
     html.removeEventListener("mouseup", this.onMouseUp);
     this.props.onSetOptions({ height, width });
-    this.setState({ mouseDownAction: "", marginTop: 0, marginLeft: 0 });
+    this.updateState({ mouseDownAction: "", marginTop: 0, marginLeft: 0 });
   };
 
   onMouseMove = e => {
@@ -57,34 +76,34 @@ class MediaResize extends Component {
     const { x, y } = e;
     if (mouseDownAction === "e") {
       const newWidth = x - mediaLeft;
-      this.setState({ width: newWidth });
+      this.updateState({ width: newWidth });
     }
     if (mouseDownAction === "s") {
       const newHeight = y - mediaToTop;
-      this.setState({ height: newHeight });
+      this.updateState({ height: newHeight });
     }
     if (mouseDownAction === "n") {
       const newMarginTop = y - mediaToTop;
       const newHeight = height - (newMarginTop - marginTop);
-      this.setState({ height: newHeight, marginTop: newMarginTop });
+      this.updateState({ height: newHeight, marginTop: newMarginTop });
     }
     if (mouseDownAction === "w") {
       const newMarginLeft = x - mediaLeft;
       const newWidth = width - (newMarginLeft - marginLeft);
-      this.setState({ width: newWidth, marginLeft: newMarginLeft });
+      this.updateState({ width: newWidth, marginLeft: newMarginLeft });
     }
 
     if (mouseDownAction === "se") {
       const newWidth = x - mediaLeft;
       const newHeight = y - mediaToTop;
-      this.setState({ width: newWidth, height: newHeight });
+      this.updateState({ width: newWidth, height: newHeight });
     }
     if (mouseDownAction === "nw") {
       const newMarginLeft = x - mediaLeft;
       const newWidth = width - (newMarginLeft - marginLeft);
       const newMarginTop = y - mediaToTop;
       const newHeight = height - (newMarginTop - marginTop);
-      this.setState({
+      this.updateState({
         height: newHeight,
         marginTop: newMarginTop,
         width: newWidth,
@@ -95,7 +114,7 @@ class MediaResize extends Component {
       const newWidth = x - mediaLeft;
       const newMarginTop = y - mediaToTop;
       const newHeight = height - (newMarginTop - marginTop);
-      this.setState({
+      this.updateState({
         height: newHeight,
         marginTop: newMarginTop,
         width: newWidth
@@ -105,7 +124,7 @@ class MediaResize extends Component {
       const newHeight = y - mediaToTop;
       const newMarginLeft = x - mediaLeft;
       const newWidth = width - (newMarginLeft - marginLeft);
-      this.setState({
+      this.updateState({
         width: newWidth,
         marginLeft: newMarginLeft,
         height: newHeight
@@ -118,16 +137,6 @@ class MediaResize extends Component {
     //   this.setState({ marginLeft: newMarginLeft });
     // }
   };
-
-  UNSAFE_componentWillMount() {
-    const { width, height, src, alignment } = this.props;
-    this.setState({
-      width: parseInt(width),
-      height: parseInt(height),
-      src,
-      alignment
-    });
-  }
   render() {
     const { height, width, marginTop, marginLeft, src } = this.state;
     const { mediaComponent } = this.props;

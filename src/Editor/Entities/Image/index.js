@@ -5,11 +5,21 @@ import "./index.css";
 
 const ImageComponent = config =>
   class Image extends Component {
+    _isMounted = false;
     state = {
-      imageOptions: false
+      src: "",
+      alignment: "",
+      height: 0,
+      width: 0,
+      alt: "",
+      imageOptions: false,
+      marginTop: 0,
+      marginLeft: 0
     };
 
     onImageOptions = imageOptions => {
+      this.setState({ imageOptions });
+      this.updateState();
       this.setEntityImageOptions({ imageOptions });
     };
     setEntityImageOptions = options => {
@@ -25,11 +35,10 @@ const ImageComponent = config =>
           "change-block-data"
         )
       );
-      this.setState({
-        dummy: true
-      });
+      this._isMounted && this.updateState();
     };
-    render() {
+
+    updateState = () => {
       const { block, contentState } = this.props;
       const entity = contentState.getEntity(block.getEntityAt(0));
       const {
@@ -42,6 +51,36 @@ const ImageComponent = config =>
         marginTop,
         marginLeft
       } = entity.getData();
+      this.setState({
+        src,
+        alignment,
+        height,
+        width,
+        alt,
+        imageOptions,
+        marginTop,
+        marginLeft
+      });
+    };
+    componentDidMount() {
+      this._isMounted = true;
+      this.updateState();
+    }
+
+    componentWillUnmount() {
+      this._isMounted = false;
+    }
+    render() {
+      const {
+        src,
+        alignment,
+        height,
+        width,
+        alt,
+        imageOptions,
+        marginTop,
+        marginLeft
+      } = this.state;
       return (
         <Fragment>
           <span className="image-options" style={{ justifyContent: alignment }}>
@@ -49,6 +88,9 @@ const ImageComponent = config =>
               <span
                 onMouseDown={() => {
                   !imageOptions && this.onImageOptions(true);
+                }}
+                onDoubleClick={() => {
+                  this.onImageOptions(false);
                 }}
                 style={{
                   cursor: "pointer"
@@ -89,7 +131,9 @@ const ImageComponent = config =>
                           margin: "10px",
                           backgroundColor: "#0579ec",
                           border: "none",
-                          borderRadius:'5px'
+                          borderRadius: "5px",
+                          height: "40px",
+                          cursor: "pointer"
                         }}
                       >
                         Save Changes

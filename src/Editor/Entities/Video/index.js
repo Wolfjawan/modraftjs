@@ -5,6 +5,7 @@ import "./index.css";
 
 const VideoComponent = config =>
   class Video extends Component {
+    _isMounted = false
     state = {
       videoOptions: false,
       hovered: false
@@ -26,13 +27,9 @@ const VideoComponent = config =>
           "change-block-data"
         )
       );
-      this.setState({
-        dummy: true
-      });
+      this._isMounted && this.updateState();
     };
-
-    render() {
-      const { hovered } = this.state;
+    updateState = () => {
       const { block, contentState } = this.props;
       const entity = contentState.getEntity(block.getEntityAt(0));
       const {
@@ -45,6 +42,37 @@ const VideoComponent = config =>
         marginTop,
         marginLeft
       } = entity.getData();
+      this.setState({
+        videoCode,
+        alignment,
+        height,
+        width,
+        title,
+        videoOptions,
+        marginTop,
+        marginLeft
+      });
+    };
+    componentDidMount() {
+      this._isMounted = true;
+      this.updateState();
+    }
+
+    componentWillUnmount() {
+      this._isMounted = false;
+    }
+    render() {
+      const {
+        hovered,
+        videoCode,
+        alignment,
+        height,
+        width,
+        title,
+        videoOptions,
+        marginTop,
+        marginLeft
+      } = this.state;
       return (
         <Fragment>
           <span className="video-options" style={{ justifyContent: alignment }}>
