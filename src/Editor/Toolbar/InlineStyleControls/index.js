@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import StyleButton from "../Button";
 import { RichUtils } from "draft-js";
 import { INLINE_STYLES } from "./constants";
@@ -9,7 +9,7 @@ const InlineStyleControls = props => {
     props.onChange(RichUtils.toggleInlineStyle(props.editorState, inlineStyle));
   };
   return (
-    <div className="toolbar-controls-box">
+    <Fragment>
       {INLINE_STYLES.map(type => (
         <StyleButton
           key={type.label}
@@ -18,7 +18,7 @@ const InlineStyleControls = props => {
           {...type}
         />
       ))}
-    </div>
+    </Fragment>
   );
 };
 

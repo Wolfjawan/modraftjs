@@ -60,13 +60,15 @@ class VideoControl extends Component {
   render() {
     const { expanded } = this.state;
     return (
-      <VideoLayouts
-        onChange={this.addVideo}
-        expanded={expanded}
-        onExpandEvent={this.onExpandEvent}
-        doExpand={this.doExpand}
-        doCollapse={this.doCollapse}
-      />
+      <span className="toolbar-item">
+        <VideoLayouts
+          onChange={this.addVideo}
+          expanded={expanded}
+          onExpandEvent={this.onExpandEvent}
+          doExpand={this.doExpand}
+          doCollapse={this.doCollapse}
+        />
+      </span>
     );
   }
 }

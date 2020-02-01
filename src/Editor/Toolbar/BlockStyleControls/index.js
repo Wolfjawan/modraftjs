@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import BlockStyleHeaders from "./BlockStyleHeaders";
 import BlockStyles from "./BlockStyles";
 import './index.css'
@@ -14,14 +14,14 @@ class BlockStyleControls extends Component {
   }
   render() {
     return (
-      <div className="toolbar-controls-box">
+      <Fragment>
         <BlockStyleHeaders
           {...this.props}
           {...this.state}
           onHeadersExpanded={this.onHeadersExpanded}
         />
         <BlockStyles {...this.props} />
-      </div>
+      </Fragment>
     );
   }
 }

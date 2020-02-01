@@ -55,13 +55,15 @@ class ImageControl extends Component {
   render() {
     const { expanded } = this.state;
     return (
-      <ImageLayouts
-        onChange={this.addImage}
-        expanded={expanded}
-        onExpandEvent={this.onExpandEvent}
-        doExpand={this.doExpand}
-        doCollapse={this.doCollapse}
-      />
+      <span className="toolbar-item">
+        <ImageLayouts
+          onChange={this.addImage}
+          expanded={expanded}
+          onExpandEvent={this.onExpandEvent}
+          doExpand={this.doExpand}
+          doCollapse={this.doCollapse}
+        />
+      </span>
     );
   }
 }

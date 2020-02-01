@@ -25,7 +25,7 @@ class TextEditor extends Component {
   };
   showForm = () => {
     const { editorState } = this.props;
-    const { showLinkInput}=this.state
+    const { showLinkInput } = this.state;
     if (showLinkInput) this.showLinkInputHandler(!showLinkInput);
     const selected = getFragmentFromSelection(editorState);
     const text = selected ? selected.map(x => x.getText()).join("\n") : "";
@@ -85,42 +85,44 @@ class TextEditor extends Component {
   render() {
     const { url, showLinkInput } = this.state;
     return (
-      <div className="toolbar-controls-box-link" onClick={this.focus}>
-        <Button
-          onToggle={this.showForm}
-          label="C"
-          icon={<FontAwesomeIcon icon={faLink} />}
-        />
-        {showLinkInput && (
-          <div className="toolbar-controls-box-link-content">
-            <div style={{ display: "flex" }}>
-              <input
-                ref="url_input"
-                style={{ width: "200px", marginLeft: "4px", height: "20px" }}
-                type="text"
-                value={url}
-                name="background"
-                placeholder="Enter link"
-                onChange={e => {
-                  this.setState({ url: e.target.value });
-                }}
-              />
-              <button
-                style={{
-                  width: "fit-content",
-                  minHeight: "20px",
-                  cursor: "pointer",
-                  textAlign: "center",
-                  alignContent: "center"
-                }}
-                onMouseDown={this.setLink}
-              >
-                Save
-              </button>
+      <span className="toolbar-item">
+        <div className="toolbar-controls-box-link" onClick={this.focus}>
+          <Button
+            onToggle={this.showForm}
+            label="C"
+            icon={<FontAwesomeIcon icon={faLink} />}
+          />
+          {showLinkInput && (
+            <div className="toolbar-controls-box-link-content">
+              <div style={{ display: "flex" }}>
+                <input
+                  ref="url_input"
+                  style={{ width: "200px", marginLeft: "4px", height: "20px" }}
+                  type="text"
+                  value={url}
+                  name="background"
+                  placeholder="Enter link"
+                  onChange={e => {
+                    this.setState({ url: e.target.value });
+                  }}
+                />
+                <button
+                  style={{
+                    width: "fit-content",
+                    minHeight: "20px",
+                    cursor: "pointer",
+                    textAlign: "center",
+                    alignContent: "center"
+                  }}
+                  onMouseDown={this.setLink}
+                >
+                  Save
+                </button>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      </span>
     );
   }
 }

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import StyleButton from "../Button";
 import { RichUtils } from "draft-js";
 import { BLOCK_TYPES_HEADERS } from "./constants";
@@ -26,7 +26,7 @@ const BlockStyleHeaders = props => {
     return btnLabel;
   };
   return (
-    <Fragment>
+    <span className="toolbar-item">
       <div className="toolbar-controls-box-headers">
         <span
           onClick={() => onHeadersExpanded(!headersExpanded)}
@@ -48,7 +48,7 @@ const BlockStyleHeaders = props => {
           </div>
         )}
       </div>
-    </Fragment>
+    </span>
   );
 };
 export default BlockStyleHeaders;
