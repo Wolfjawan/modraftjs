@@ -40,7 +40,7 @@ class TextEditor extends Component {
   };
   setLink = () => {
     const { url } = this.state;
-    const { editorState } = this.props;
+    const { editorState, onChangeEditorState } = this.props;
     const currentContent = editorState.getCurrentContent();
     const currentContentWithEntity = currentContent.createEntity(
       "LINK",
@@ -48,10 +48,11 @@ class TextEditor extends Component {
       { url }
     );
     const entityKey = currentContentWithEntity.getLastCreatedEntityKey();
+
     const newEditorState = EditorState.set(editorState, {
       currentContent: currentContentWithEntity
     });
-    this.props.onChange(
+    onChangeEditorState(
       RichUtils.toggleLink(
         newEditorState,
         newEditorState.getSelection(),
@@ -60,7 +61,7 @@ class TextEditor extends Component {
     );
     this.setState({ url: "" });
     this.showLinkInputHandler(false);
-    // const { editorState, onChange } = this.props;
+    // const { editorState, onChangeEditorState } = this.props;
     // const { url } = this.state;
     // const entityKey = editorState
     //   .getCurrentContent()
@@ -68,12 +69,13 @@ class TextEditor extends Component {
     //     url
     //   })
     //   .getLastCreatedEntityKey();
+
     // const newEditorState = AtomicBlockUtils.insertAtomicBlock(
     //   editorState,
     //   entityKey,
     //   " "
     // );
-    // onChange(newEditorState);
+    // onChangeEditorState(newEditorState);
     // this.setState({ url: "" });
     // this.showLinkInputHandler(false);
   };

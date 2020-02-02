@@ -20,7 +20,7 @@ const VideoComponent = config =>
       contentState.mergeEntityData(entityKey, {
         ...options
       });
-      config.onChange(
+      config.onChangeEditorState(
         EditorState.push(
           config.getEditorState(),
           contentState,

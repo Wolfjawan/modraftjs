@@ -1,16 +1,98 @@
 {
+  "contentState": {
     "blocks": [
       {
-        "key": "di701",
-        "text": "",
-        "type": "unstyled",
+        "key": "dvq4s",
+        "text": "Register and complete the challenge by designing your own web page here using this link: https://learn.freecodecamp.org/../build-a-tribute-page",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [
+          {
+            "offset": 89,
+            "length": 54,
+            "key": 0
+          }
+        ],
+        "data": {}
+      },
+      {
+        "key": "8vvlf",
+        "text": "Implement what you have learned from Step 2.",
+        "type": "unordered-list-item",
         "depth": 0,
         "inlineStyleRanges": [],
         "entityRanges": [],
         "data": {}
       },
       {
-        "key": "u1tv",
+        "key": "5f0su",
+        "text": "Include this test script line in your codepen HTML page:",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "cvufb",
+        "text": "<script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [
+          {
+            "offset": 0,
+            "length": 87,
+            "style": "BOLD"
+          }
+        ],
+        "entityRanges": [
+          {
+            "offset": 13,
+            "length": 63,
+            "key": 1
+          }
+        ],
+        "data": {}
+      },
+      {
+        "key": "89bh4",
+        "text": "Review the test results and try to improve it",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "bo1p2",
+        "text": "Do not copy the HTML/CSS code of the sample FCC page! We want to see your own effort",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "q4pn",
+        "text": "Ensure the page includes a title and an image with a caption",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "4cdks",
+        "text": "When your web page is complete, copy and paste the codepen link to your page in the field below and press Submit.",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "5kjcc",
         "text": " ",
         "type": "atomic",
         "depth": 0,
@@ -19,13 +101,37 @@
           {
             "offset": 0,
             "length": 1,
-            "key": 0
+            "key": 2
           }
         ],
         "data": {}
       },
       {
-        "key": "bnl8j",
+        "key": "co4g7",
+        "text": "",
+        "type": "unstyled",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "7bdrp",
+        "text": " ",
+        "type": "atomic",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [
+          {
+            "offset": 0,
+            "length": 1,
+            "key": 3
+          }
+        ],
+        "data": {}
+      },
+      {
+        "key": "6kbcl",
         "text": "",
         "type": "unstyled",
         "depth": 0,
@@ -36,14 +142,52 @@
     ],
     "entityMap": {
       "0": {
+        "type": "LINK",
+        "mutability": "MUTABLE",
+        "data": {
+          "href": "https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-tribute-page/",
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "title": "https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-tribute-page/",
+          "url": "https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-tribute-page/"
+        }
+      },
+      "1": {
+        "type": "LINK",
+        "mutability": "MUTABLE",
+        "data": {
+          "href": "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js",
+          "rel": "noopener noreferrer",
+          "target": "_blank",
+          "title": "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js",
+          "url": "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"
+        }
+      },
+      "2": {
         "type": "image",
         "mutability": "IMMUTABLE",
         "data": {
-          "src": "https://www.duluxdecoratorcentre.co.uk/content/files/uk/images/pages/wallpaper/wallpaper-pattern.png",
-          "height": 425,
-          "width": 602,
-          "alt": "ssssss"
+          "src": "https://training.bitrix24.com/images/portal_user_en/personal_sm.png",
+          "height": 421,
+          "width": 620,
+          "alt": "hii",
+          "alignment": "center",
+          "imageOptions": false
+        }
+      },
+      "3": {
+        "type": "video",
+        "mutability": "IMMUTABLE",
+        "data": {
+          "videoCode": "0HBfmeIhh4M",
+          "height": 474,
+          "width": 695,
+          "title": "jjjj",
+          "videoOptions": false,
+          "alignment": "center"
         }
       }
     }
-  }
+  },
+  "html": "<div data-contents='true'><ul class='public-DraftStyleDefault-ul' data-offset-key='aljgp-0-0'><li class='public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR' data-block='true' data-editor='b52g8' data-offset-key='aljgp-0-0'><div data-offset-key='aljgp-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='aljgp-0-0'><span data-text='true'>Register and complete the challenge by designing your own web page here using this link: </span></span><a href='https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-tribute-page/' title='https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-tribute-page/' target='_blank' rel='noopener noreferrer'><span data-offset-key='aljgp-1-0'><span data-text='true'>https://learn.freecodecamp.org/../build-a-tribute-page</span></span></a></div></li><li class='public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR' data-block='true' data-editor='b52g8' data-offset-key='ev4qp-0-0'><div data-offset-key='ev4qp-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='ev4qp-0-0'><span data-text='true'>Implement what you have learned from Step 2.</span></span></div></li><li class='public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR' data-block='true' data-editor='b52g8' data-offset-key='cdg33-0-0'><div data-offset-key='cdg33-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='cdg33-0-0'><span data-text='true'>Include this test script line in your codepen HTML page:</span></span></div></li></ul><div class=' data-block='true' data-editor='b52g8' data-offset-key='bgi5r-0-0'><div data-offset-key='bgi5r-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='bgi5r-0-0' style='font-weight: bold;'><span data-text='true'>&lt;script src='</span></span><a href='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js' title='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js' target='_blank' rel='noopener noreferrer'><span data-offset-key='bgi5r-1-0' style='font-weight: bold;'><span data-text='true'>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</span></span></a><span data-offset-key='bgi5r-2-0' style='font-weight: bold;'><span data-text='true'>'&gt;&lt;/script&gt;</span></span></div></div><ul class='public-DraftStyleDefault-ul' data-offset-key='8579n-0-0'><li class='public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-reset public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR' data-block='true' data-editor='b52g8' data-offset-key='8579n-0-0'><div data-offset-key='8579n-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='8579n-0-0'><span data-text='true'>Review the test results and try to improve it</span></span></div></li><li class='public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR' data-block='true' data-editor='b52g8' data-offset-key='73rkm-0-0'><div data-offset-key='73rkm-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='73rkm-0-0'><span data-text='true'>Do not copy the HTML/CSS code of the sample FCC page! We want to see your own effort</span></span></div></li><li class='public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR' data-block='true' data-editor='b52g8' data-offset-key='5s7bf-0-0'><div data-offset-key='5s7bf-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='5s7bf-0-0'><span data-text='true'>Ensure the page includes a title and an image with a caption</span></span></div></li><li class='public-DraftStyleDefault-unorderedListItem public-DraftStyleDefault-depth0 public-DraftStyleDefault-listLTR' data-block='true' data-editor='b52g8' data-offset-key='dnnvr-0-0'><div data-offset-key='dnnvr-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='dnnvr-0-0'><span data-text='true'>When your web page is complete, copy and paste the codepen link to your page in the field below and press Submit.</span></span></div></li></ul><div class=' data-block='true' data-editor='b52g8' data-offset-key='8ec4i-0-0'><div data-offset-key='8ec4i-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='8ec4i-0-0'><br data-text='true'></span></div></div><figure class=' data-block='true' data-editor='b52g8' data-offset-key='s37a-0-0' contenteditable='false'><span class='image-options' style='justify-content: center;'><span class='image-wrapper'><span style='cursor: pointer;'><span style='margin-top: 0px; margin-left: 0px; position: inherit;'><span class='resize-crop-box' style='width: 585px; height: 391px; transform: translateX(0px) translateY(0px);'><img src='https://training.bitrix24.com/images/portal_user_en/personal_sm.png' alt='resize' style='width: 585px; height: 391px;'></span></span></span></span></span></figure><div class=' data-block='true' data-editor='b52g8' data-offset-key='2uatt-0-0'><div data-offset-key='2uatt-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='2uatt-0-0'><br data-text='true'></span></div></div><div class=' data-block='true' data-editor='b52g8' data-offset-key='cr29t-0-0'><div data-offset-key='cr29t-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='cr29t-0-0'><br data-text='true'></span></div></div><div class=' data-block='true' data-editor='b52g8' data-offset-key='7je8r-0-0'><div data-offset-key='7je8r-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='7je8r-0-0'><br data-text='true'></span></div></div><figure class=' data-block='true' data-editor='b52g8' data-offset-key='cfqfo-0-0' contenteditable='false'><span class='video-options' style='justify-content: center;'><span class='video-wrapper'><span><span style='position: inherit;'><span style='transform: translateX(0px) translateY(0px); width: 702px; height: 449px;'><iframe src='https://www.youtube.com/embed/0HBfmeIhh4M' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;' allowfullscreen=' title='hello' height='449' width='702'></iframe></span></span></span></span></span></figure><div class=' data-block='true' data-editor='b52g8' data-offset-key='di5ol-0-0'><div data-offset-key='di5ol-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='di5ol-0-0'><br data-text='true'></span></div></div><div class=' data-block='true' data-editor='b52g8' data-offset-key='e1csf-0-0'><div data-offset-key='e1csf-0-0' class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr'><span data-offset-key='e1csf-0-0'><br data-text='true'></span></div></div></div>"
+}

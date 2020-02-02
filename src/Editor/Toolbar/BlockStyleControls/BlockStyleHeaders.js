@@ -6,9 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsAltV } from "@fortawesome/free-solid-svg-icons";
 
 const BlockStyleHeaders = props => {
-  const { editorState, onChange, headersExpanded, onHeadersExpanded } = props;
+  const { editorState, onChangeEditorState, headersExpanded, onHeadersExpanded } = props;
   const onToggle = blockType => {
-    onChange(RichUtils.toggleBlockType(editorState, blockType));
+    onChangeEditorState(RichUtils.toggleBlockType(editorState, blockType));
   };
   const selection = editorState.getSelection();
   const blockType = editorState

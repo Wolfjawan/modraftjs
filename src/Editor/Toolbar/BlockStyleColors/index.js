@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { INLINE_COLORS } from "./constants";
-import Colors_Icon from "../../../images/color.jpg";
+import Colors_Icon from "../../images/color.jpg";
 import "./index.css";
 class InlineStyleControls extends Component {
   state = { color: "", background: "", colorsExpanded: false };

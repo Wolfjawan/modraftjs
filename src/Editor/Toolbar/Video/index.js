@@ -33,7 +33,7 @@ class VideoControl extends Component {
   };
 
   addVideo = (videoCode, height, width, title) => {
-    const { editorState, onChange } = this.props;
+    const { editorState, onChangeEditorState } = this.props;
     const entityKey = editorState
       .getCurrentContent()
       .createEntity("video", "IMMUTABLE", {
@@ -48,7 +48,7 @@ class VideoControl extends Component {
       entityKey,
       " "
     );
-    onChange(newEditorState);
+    onChangeEditorState(newEditorState);
     this.doCollapse();
   };
 

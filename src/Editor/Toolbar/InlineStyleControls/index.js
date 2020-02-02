@@ -6,7 +6,7 @@ import { INLINE_STYLES } from "./constants";
 const InlineStyleControls = props => {
   let currentStyle = props.editorState.getCurrentInlineStyle();
   const onToggle = inlineStyle => {
-    props.onChange(RichUtils.toggleInlineStyle(props.editorState, inlineStyle));
+    props.onChangeEditorState(RichUtils.toggleInlineStyle(props.editorState, inlineStyle));
   };
   return (
     <Fragment>

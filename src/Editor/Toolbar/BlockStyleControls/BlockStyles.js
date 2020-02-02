@@ -4,9 +4,9 @@ import { RichUtils } from "draft-js";
 import { BLOCK_TYPES } from "./constants";
 
 const BlockStyles = props => {
-  const { editorState, onChange } = props;
+  const { editorState, onChangeEditorState } = props;
   const onToggle = blockType => {
-    onChange(RichUtils.toggleBlockType(editorState, blockType));
+    onChangeEditorState(RichUtils.toggleBlockType(editorState, blockType));
   };
   const selection = editorState.getSelection();
   const blockType = editorState

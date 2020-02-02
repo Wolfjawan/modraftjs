@@ -18,7 +18,8 @@ class index extends Component {
       "unstyled"
     );
 
-    this.props.onChange(EditorState.push(editorState, removeBlock));
+    this.props.  console.log(editorState)
+(EditorState.push(editorState, removeBlock));
   };
   render() {
     return <div></div>;

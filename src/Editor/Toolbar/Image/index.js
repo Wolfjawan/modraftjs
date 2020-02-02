@@ -27,7 +27,7 @@ class ImageControl extends Component {
   };
 
   addImage = (src, height, width, alt) => {
-    const { editorState, onChange } = this.props;
+    const { editorState, onChangeEditorState } = this.props;
     const entityKey = editorState
       .getCurrentContent()
       .createEntity("image", "IMMUTABLE", {
@@ -43,7 +43,7 @@ class ImageControl extends Component {
       entityKey,
       " "
     );
-    onChange(newEditorState);
+    onChangeEditorState(newEditorState);
     this.doCollapse();
   };
 
