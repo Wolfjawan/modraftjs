@@ -2,8 +2,7 @@
   width: 100%;
 }
 .editor-warper {
-  width: 98%;
-  padding: 20px 1%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   height: fit-content;
@@ -71,4 +70,3 @@
   color: #000000;
   background-color: #dfdfdf;
 }
-

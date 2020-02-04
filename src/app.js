@@ -12,7 +12,7 @@ class App extends Component {
   onChange = contentState => {
     this.setState({ contentState });
   };
-  
+
   onChangeHTML = html => {
     this.setState({ html });
   };
@@ -24,20 +24,28 @@ class App extends Component {
   render() {
     const { contentState, html } = this.state;
     return (
-      <div>
-        <Editor
-          onChange={this.onChange}
-          contentState={contentState}
-          onChangeHTML={this.onChangeHTML}
-        />
-        <h1> HTML state</h1>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: html
-          }}
-        />
-        <h1>Content State</h1>
-        <pre>{_convertContentStateToRawJS(contentState)}</pre>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          marginTop: "20px"
+        }}
+      >
+        <div style={{ width: "90%" }}>
+          <Editor
+            onChange={this.onChange}
+            contentState={contentState}
+            onChangeHTML={this.onChangeHTML}
+          />
+          <h1> HTML state</h1>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: html
+            }}
+          />
+          <h1>Content State</h1>
+          <pre>{_convertContentStateToRawJS(contentState)}</pre>
+        </div>
       </div>
     );
   }
