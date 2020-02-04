@@ -12,19 +12,23 @@ class App extends Component {
   onChange = contentState => {
     this.setState({ contentState });
   };
+  
+  onChangeHTML = html => {
+    this.setState({ html });
+  };
+
   componentWillMount() {
     this.setState({ contentState: ExampleState.contentState });
   }
 
   render() {
     const { contentState, html } = this.state;
-    console.log(contentState);
     return (
       <div>
         <Editor
           onChange={this.onChange}
           contentState={contentState}
-          onChangeHTML={html => this.setState({ html })}
+          onChangeHTML={this.onChangeHTML}
         />
         <h1> HTML state</h1>
         <div

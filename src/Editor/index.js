@@ -4,9 +4,8 @@ import LinkDecorator from "./Entities/Link";
 import MediaBlockRenderFunc from "./Entities";
 import Toolbar from "./Toolbar";
 import createStyles from "draft-js-custom-styles";
-import "./index.css";
 import { _convertToRaw, _convertFromRow } from "./useCases/DataConvert";
-
+import "./index.css";
 const { styles, customStyleFn } = createStyles(["color", "background"]);
 export default class TextEditor extends React.Component {
   constructor(props) {
