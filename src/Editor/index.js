@@ -5,35 +5,45 @@ import MediaBlockRenderFunc from "./Entities";
 import Toolbar from "./Toolbar";
 import createStyles from "draft-js-custom-styles";
 import "./index.css";
-import {
-  _convertFromHTML,
-  _convertToRaw,
-  _convertEditorStateToRawJS,
-  _convertFromRow,
-  _convertContentStateToRawJS
-} from "./useCases/DataConvert";
-import ExampleState from "./example.json";
+import { _convertToRaw, _convertFromRow } from "./useCases/DataConvert";
 
 const { styles, customStyleFn } = createStyles(["color", "background"]);
 export default class TextEditor extends React.Component {
-  state = {
-    editorState: EditorState.createEmpty(LinkDecorator),
-    contentState: {},
-    html: "",
-    isFocused: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      editorState: EditorState.createEmpty(LinkDecorator),
+      isFocused: false
+    };
+  }
+  componentWillMount() {
+    if (this.props.contentState && this.props.contentState.blocks) {
+      const editorState = _convertFromRow(
+        this.state.editorState,
+        this.props.contentState
+      );
+      this.setState({ editorState }, () => {
+        if (this.props.onChange) {
+          this.props.onChange({
+            contentState: _convertToRaw(this.state.editorState)
+          });
+        }
+      });
+    }
+  }
   onChangeEditorState = editorState => {
+    const { onChange, onChangeHTML } = this.props;
     const contentState = _convertToRaw(editorState);
-    this.setState({
-      editorState,
-      contentState,
-      html: this.refs.editor.editor.innerHTML
-    });
+
+    const html =
+      this.refs && this.refs.editor && this.refs.editor.editor.innerHTML;
+    this.setState({ editorState });
+    onChange && onChange(contentState);
+    onChange && onChangeHTML(html);
   };
 
   focus = () => {
-    this.refs.editor.focus();
-    this.setState({ isFocused: true });
+    this.refs.editor && this.refs.editor.focus();
     this.isFocusedHandler(true);
   };
 
@@ -61,24 +71,15 @@ export default class TextEditor extends React.Component {
     }
   };
 
-  componentDidMount() {
-    this.setState({
-      editorState: _convertFromRow(
-        this.state.editorState,
-        ExampleState.contentState
-      )
-    });
-  }
-
   getEditorState = () => this.state.editorState;
   render() {
-    const { editorState, isFocused, html } = this.state;
+    const { isFocused, editorState } = this.state;
     const blockRendererFn = MediaBlockRenderFunc({
       getEditorState: this.getEditorState,
       onChangeEditorState: this.onChangeEditorState
     });
     return (
-      <div className="editor-warper" style={{ minHeight: "1000px" }}>
+      <div className="editor-warper">
         <Toolbar
           editorState={editorState}
           toggleColor={this.toggleColor}
@@ -97,16 +98,6 @@ export default class TextEditor extends React.Component {
             spellCheck={true}
           />
         </div>
-        <h1> HTML state</h1>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: html
-          }}
-        />
-        <h1>Content State</h1>
-        <pre>{_convertContentStateToRawJS(editorState)}</pre>
-        <h1>Editor State</h1>
-        <pre>{_convertEditorStateToRawJS(editorState)}</pre>
       </div>
     );
   }

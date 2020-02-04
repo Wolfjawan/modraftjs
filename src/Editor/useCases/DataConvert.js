@@ -6,9 +6,9 @@ import {
   convertFromRaw
 } from "draft-js";
 
-export const _convertFromRow = (editorState, data) => {
-  const contentState = convertFromRaw(data);
-  return EditorState.push(editorState, contentState);
+export const _convertFromRow = (editorState, contentState) => {
+  const newEditorState = convertFromRaw(contentState);
+  return EditorState.push(editorState, newEditorState);
 };
 export const _convertFromHTML = (editorState, html) => {
   const blocksFromHTML = convertFromHTML(html);
@@ -28,11 +28,15 @@ export const _convertEditorStateToRawJS = editorState => {
   const contentState = editorState.getCurrentContent();
   return JSON.stringify(contentState, null, 2);
 };
-export const _convertContentStateToRawJS = editorState => {
-    const contentState = editorState.getCurrentContent();
-    const raw = convertToRaw(contentState);
-    return JSON.stringify(raw, null, 2);
-  };
+export const _convertContentStateToRawJS = contentState => {
+  if (contentState && contentState.blocks) {
+    return JSON.stringify(contentState, null, 2);
+  } else return "";
+};
+
+
+
+
 // 'use strict';
 // const {
 //   CompositeDecorator,
