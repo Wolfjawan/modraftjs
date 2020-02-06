@@ -140,11 +140,12 @@ class LayoutComponent extends Component {
       <div className="toolbar-controls-image-wrapper">
         <Button
           onToggle={onExpandEvent}
+          active={expanded}
           icon={<FontAwesomeIcon icon={faImage} />}
         />
         {expanded ? (
           <div
-            className={ "toolbar-controls-image-modal"}
+            className={"toolbar-controls-image-modal"}
             onClick={this.stopPropagation}
           >
             <HeaderButton

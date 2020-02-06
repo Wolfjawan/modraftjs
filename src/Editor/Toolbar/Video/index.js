@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { AtomicBlockUtils } from "draft-js";
 import VideoLayouts from "./Component";
 
@@ -60,7 +60,7 @@ class VideoControl extends Component {
   render() {
     const { expanded } = this.state;
     return (
-      <span className="toolbar-item">
+      <Fragment>
         <VideoLayouts
           onChange={this.addVideo}
           expanded={expanded}
@@ -68,7 +68,7 @@ class VideoControl extends Component {
           doExpand={this.doExpand}
           doCollapse={this.doCollapse}
         />
-      </span>
+      </Fragment>
     );
   }
 }

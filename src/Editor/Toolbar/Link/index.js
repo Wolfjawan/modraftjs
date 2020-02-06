@@ -48,7 +48,6 @@ class TextEditor extends Component {
       { url }
     );
     const entityKey = currentContentWithEntity.getLastCreatedEntityKey();
-
     const newEditorState = EditorState.set(editorState, {
       currentContent: currentContentWithEntity
     });
@@ -61,23 +60,6 @@ class TextEditor extends Component {
     );
     this.setState({ url: "" });
     this.showLinkInputHandler(false);
-    // const { editorState, onChangeEditorState } = this.props;
-    // const { url } = this.state;
-    // const entityKey = editorState
-    //   .getCurrentContent()
-    //   .createEntity("link", "IMMUTABLE", {
-    //     url
-    //   })
-    //   .getLastCreatedEntityKey();
-
-    // const newEditorState = AtomicBlockUtils.insertAtomicBlock(
-    //   editorState,
-    //   entityKey,
-    //   " "
-    // );
-    // onChangeEditorState(newEditorState);
-    // this.setState({ url: "" });
-    // this.showLinkInputHandler(false);
   };
   UNSAFE_componentWillReceiveProps(newProps) {
     if (newProps.isFocused) {
@@ -87,44 +69,42 @@ class TextEditor extends Component {
   render() {
     const { url, showLinkInput } = this.state;
     return (
-      <span className="toolbar-item">
-        <div className="toolbar-controls-box-link" onClick={this.focus}>
-          <Button
-            onToggle={this.showForm}
-            label="C"
-            icon={<FontAwesomeIcon icon={faLink} />}
-          />
-          {showLinkInput && (
-            <div className="toolbar-controls-box-link-content">
-              <div style={{ display: "flex" }}>
-                <input
-                  ref="url_input"
-                  style={{ width: "200px", marginLeft: "4px", height: "20px" }}
-                  type="text"
-                  value={url}
-                  name="background"
-                  placeholder="Enter link"
-                  onChange={e => {
-                    this.setState({ url: e.target.value });
-                  }}
-                />
-                <button
-                  style={{
-                    width: "fit-content",
-                    minHeight: "20px",
-                    cursor: "pointer",
-                    textAlign: "center",
-                    alignContent: "center"
-                  }}
-                  onMouseDown={this.setLink}
-                >
-                  Save
-                </button>
-              </div>
+      <div className="toolbar-controls-box-link" onClick={this.focus}>
+        <Button
+          onToggle={this.showForm}
+          active={showLinkInput}
+          icon={<FontAwesomeIcon icon={faLink} />}
+        />
+        {showLinkInput && (
+          <div className="toolbar-controls-box-link-content">
+            <div style={{ display: "flex" }}>
+              <input
+                ref="url_input"
+                style={{ width: "200px", marginLeft: "4px", height: "20px" }}
+                type="text"
+                value={url}
+                name="background"
+                placeholder="Enter link"
+                onChange={e => {
+                  this.setState({ url: e.target.value });
+                }}
+              />
+              <button
+                style={{
+                  width: "fit-content",
+                  minHeight: "20px",
+                  cursor: "pointer",
+                  textAlign: "center",
+                  alignContent: "center"
+                }}
+                onMouseDown={this.setLink}
+              >
+                Save
+              </button>
             </div>
-          )}
-        </div>
-      </span>
+          </div>
+        )}
+      </div>
     );
   }
 }

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { AtomicBlockUtils } from "draft-js";
 import ImageLayouts from "./Component";
 
@@ -55,7 +55,7 @@ class ImageControl extends Component {
   render() {
     const { expanded } = this.state;
     return (
-      <span className="toolbar-item">
+      <Fragment>
         <ImageLayouts
           onChange={this.addImage}
           expanded={expanded}
@@ -63,7 +63,7 @@ class ImageControl extends Component {
           doExpand={this.doExpand}
           doCollapse={this.doCollapse}
         />
-      </span>
+      </Fragment>
     );
   }
 }

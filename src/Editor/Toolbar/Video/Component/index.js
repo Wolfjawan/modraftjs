@@ -42,6 +42,7 @@ class LayoutComponent extends Component {
       <div className="toolbar-controls-video-wrapper">
         <Button
           onToggle={onExpandEvent}
+          active={expanded}
           icon={<FontAwesomeIcon icon={faVideo} />}
         />
         {expanded ? (
