@@ -15,7 +15,7 @@ class App extends Component {
     contentState: {},
     html: ""
   };
-  
+
   onChange = e => {
     this.setState({ ...e });
   };

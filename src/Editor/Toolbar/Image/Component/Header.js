@@ -19,7 +19,7 @@ export default ({
           })}
         />
       </span>
-      <span
+      {/* <span
         onClick={showImageUploadOption}
         className="toolbar-controls-image-modal-header-option"
       >
@@ -29,7 +29,7 @@ export default ({
             "toolbar-controls-image-modal-header-label-highlighted": uploadHighlighted
           })}
         />
-      </span>
+      </span> */}
     </div>
   );
 };

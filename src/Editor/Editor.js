@@ -71,6 +71,7 @@ export default class Editor extends React.Component {
           <DraftEditor
             editorState={editorState}
             customStyleFn={customStyleFn}
+            blockStyleFn={blockStyleFn}
             blockRendererFn={blockRendererFn}
             handleKeyCommand={this.handleKeyCommand}
             onChange={this.onChangeEditorState}
@@ -80,5 +81,15 @@ export default class Editor extends React.Component {
         </div>
       </div>
     );
+  }
+}
+function blockStyleFn(block) {
+  switch (block.getType()) {
+    case "blockquote":
+      return "editor-blockquote";
+    case "code-block":
+      return "editor-code-block";
+    default:
+      return null;
   }
 }

@@ -4,8 +4,8 @@ import {
   faBold,
   faUnderline,
   faItalic,
-  faCode
-  // faAnchor
+  faCode,
+  faStrikethrough
 } from "@fortawesome/free-solid-svg-icons";
 
 export const INLINE_STYLES = [
@@ -23,6 +23,11 @@ export const INLINE_STYLES = [
     label: "U",
     style: "UNDERLINE",
     icon: <FontAwesomeIcon icon={faUnderline} />
+  },
+  {
+    label: "s",
+    style: "STRIKETHROUGH",
+    icon: <FontAwesomeIcon icon={faStrikethrough} />
   },
   {
     label: "C",

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { INLINE_COLORS } from "./constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRainbow } from "@fortawesome/free-solid-svg-icons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 import StyleButton from "../Button";
 import "./index.css";
 class InlineStyleControls extends Component {
@@ -21,7 +21,7 @@ class InlineStyleControls extends Component {
         <StyleButton
           onToggle={() => this.colorsExpandedHandler(!colorsExpanded)}
           active={colorsExpanded}
-          icon={<FontAwesomeIcon icon={faRainbow} />}
+          icon={<FontAwesomeIcon icon={faPen} />}
         />
         {colorsExpanded && (
           <div className="toolbar-controls-box-colors-content">
