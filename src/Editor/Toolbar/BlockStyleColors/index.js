@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { INLINE_COLORS } from "./constants";
-import Colors_Icon from "../../images/color.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun } from "@fortawesome/free-solid-svg-icons";
 import "./index.css";
 class InlineStyleControls extends Component {
   state = { color: "", background: "", colorsExpanded: false };
@@ -18,18 +19,14 @@ class InlineStyleControls extends Component {
       <span className="toolbar-item">
         <div className="toolbar-controls-box-colors">
           <span onMouseDown={() => this.colorsExpandedHandler(!colorsExpanded)}>
-            <img
-              src={Colors_Icon}
-              className="toolbar-controls-box-colors-btn"
-              alt="colors"
-            />
+            <FontAwesomeIcon icon={faSun} />
           </span>
           {colorsExpanded && (
             <div className="toolbar-controls-box-colors-content">
               <div style={{ display: "flex" }}>
                 <div style={{ width: "fit-content" }}>Text Color:</div>
                 <input
-                  style={{ width: "80px", marginLeft: "4px" }}
+                  style={{ width: "80px", height: "16px", marginLeft: "4px" }}
                   type="text"
                   value={color}
                   name="color"
@@ -67,7 +64,7 @@ class InlineStyleControls extends Component {
               <div style={{ display: "flex" }}>
                 <div style={{ width: "fit-content" }}>Background Color:</div>
                 <input
-                  style={{ width: "80px", marginLeft: "4px" }}
+                  style={{ width: "80px", height: "16px", marginLeft: "4px" }}
                   type="text"
                   value={background}
                   name="background"

@@ -13,7 +13,7 @@
     display: inline-block;
   }
   .toolbar-controls-box-headers-content {
-    min-width: 100px;
+    min-width: 120px;
     display: block;
     position: absolute;
     font-size: 16px;

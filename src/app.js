@@ -1,28 +1,34 @@
 import React, { Component } from "react";
-import Editor from "./Editor";
-import { _convertContentStateToRawJS } from "./Editor/useCases/DataConvert";
+
+import {
+  _convertContentStateToRawJS,
+  EditorState,
+  Editor,
+  LinkDecorator,
+  _convertFromRow
+} from "./Editor";
 import ExampleState from "./example.json";
 
 class App extends Component {
   state = {
+    editorState: EditorState.createEmpty(LinkDecorator),
     contentState: {},
     html: ""
   };
-
-  onChange = contentState => {
-    this.setState({ contentState });
+  
+  onChange = e => {
+    this.setState({ ...e });
   };
 
-  onChangeHTML = html => {
-    this.setState({ html });
-  };
-
-  componentWillMount() {
-    this.setState({ contentState: ExampleState.contentState });
+  componentDidMount() {
+    const { editorState } = this.state;
+    this.setState({
+      editorState: _convertFromRow(editorState, ExampleState.contentState)
+    });
   }
 
   render() {
-    const { contentState, html } = this.state;
+    const { contentState, html, editorState } = this.state;
     return (
       <div
         style={{
@@ -34,7 +40,7 @@ class App extends Component {
         <div style={{ width: "90%" }}>
           <Editor
             onChange={this.onChange}
-            contentState={contentState}
+            editorState={editorState}
             onChangeHTML={this.onChangeHTML}
           />
           <h1> HTML state</h1>
