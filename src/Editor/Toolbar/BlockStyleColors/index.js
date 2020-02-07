@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { INLINE_COLORS } from "./constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
@@ -25,7 +25,14 @@ class InlineStyleControls extends Component {
         />
         {colorsExpanded && (
           <div className="toolbar-controls-box-colors-content">
-            <div style={{ display: "flex", height: "16px", fontSize: "14px" }}>
+            <div
+              style={{
+                display: "flex",
+                height: "20px",
+                fontSize: "14px",
+                marginTop: "10px"
+              }}
+            >
               <span style={{ width: "fit-content", fontSize: "14px" }}>
                 Text Color:
               </span>
@@ -40,19 +47,27 @@ class InlineStyleControls extends Component {
                 }}
               />
               {color && (
-                <span
-                  style={{
-                    width: "fit-content",
-                    height: "20px",
-                    backgroundColor: color,
-                    cursor: "pointer"
-                  }}
-                  onMouseDown={e => {
-                    this.onToggle(e, color, "color");
-                  }}
-                >
-                  Go
-                </span>
+                <Fragment>
+                  <span
+                    style={{
+                      width: "60px",
+                      height: "20px",
+                      backgroundColor: color
+                    }}
+                  />
+                  <button
+                    style={{
+                      height: "20px",
+                      cursor: "pointer",
+                      marginLeft: "5px"
+                    }}
+                    onMouseDown={e => {
+                      this.onToggle(e, color, "color");
+                    }}
+                  >
+                    Go
+                  </button>
+                </Fragment>
               )}
             </div>
             {INLINE_COLORS.map(type => (
@@ -65,9 +80,16 @@ class InlineStyleControls extends Component {
                 }}
               />
             ))}
-            <div style={{ display: "flex", height: "16px", fontSize: "14px" }}>
+            <div
+              style={{
+                display: "flex",
+                height: "20px",
+                fontSize: "14px",
+                marginTop: "10px"
+              }}
+            >
               <span style={{ width: "fit-content", fontSize: "14px" }}>
-                Background Color:
+                Background:
               </span>
               <input
                 style={{ width: "80px", marginLeft: "4px" }}
@@ -80,19 +102,27 @@ class InlineStyleControls extends Component {
                 }}
               />
               {background && (
-                <span
-                  style={{
-                    width: "fit-content",
-                    height: "20px",
-                    backgroundColor: background,
-                    cursor: "pointer"
-                  }}
-                  onMouseDown={e => {
-                    this.onToggle(e, background, "background");
-                  }}
-                >
-                  Go
-                </span>
+                <Fragment>
+                  <span
+                    style={{
+                      width: "60px",
+                      height: "20px",
+                      backgroundColor: background
+                    }}
+                  />
+                  <button
+                    style={{
+                      height: "20px",
+                      cursor: "pointer",
+                      marginLeft: "5px"
+                    }}
+                    onMouseDown={e => {
+                      this.onToggle(e, background, "background");
+                    }}
+                  >
+                    Go
+                  </button>
+                </Fragment>
               )}
             </div>
             {INLINE_COLORS.map(type => (

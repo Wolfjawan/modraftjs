@@ -36,7 +36,7 @@ const FontFamily = props => {
               <span
                 key={type.label}
                 onMouseDown={e => onToggle(e, type.style, "fontFamily")}
-                style={{ fontFamily: type.style }}
+                style={{ fontFamily: type.style, borderBottom:'1px solid #3433333b', marginTop:'5px' }}
                 className={
                   type.style === currentFontFamily ? "toolbar-item-active" : ""
                 }
