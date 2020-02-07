@@ -84,12 +84,20 @@ export default class Editor extends React.Component {
   }
 }
 function blockStyleFn(block) {
-  switch (block.getType()) {
-    case "blockquote":
-      return "editor-blockquote";
-    case "code-block":
-      return "editor-code-block";
-    default:
-      return null;
+  const blockType = block.getType();
+  if (blockType === "blockquote") {
+    return "editor-blockquote";
   }
+  if (blockType === "code-block") {
+    return "editor-code-block";
+  }
+  if (blockType === "align-left") {
+    return "align-left";
+  }
+  if (blockType === "align-center") {
+    return "align-center";
+  }
+  if (blockType === "align-right") {
+    return "align-right";
+  } else return null;
 }

@@ -70,3 +70,12 @@
   color: #000000;
   background-color: #dfdfdf;
 }
+.align-right div {
+  text-align: right;
+}
+.align-center div {
+  text-align: center;
+}
+.align-left div {
+  text-align: left;
+}
