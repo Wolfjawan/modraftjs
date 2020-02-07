@@ -1,0 +1,35 @@
+.toolbar-controls-box-font-size-btn {
+  min-width: 100px;
+  background-color: #ffffff00;
+  color: #868686;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+.toolbar-controls-box-font-size {
+  position: relative;
+  display: inline-block;
+}
+.toolbar-controls-box-font-size-content {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  font-size: 18px;
+  padding: 6px;
+  background-color: #f1f1f1;
+  border: 1px solid #696868;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.toolbar-controls-box-font-size-content span {
+  text-decoration: none;
+  display: block;
+}
+.toolbar-controls-box-font-size-content span:hover {
+  background-color: #ddd;
+}

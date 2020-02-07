@@ -5,7 +5,12 @@ import Toolbar from "./Toolbar";
 import createStyles from "draft-js-custom-styles";
 import { _convertToRaw } from "./useCases/DataConvert";
 import "./index.css";
-const { styles, customStyleFn } = createStyles(["color", "background"]);
+const { styles, customStyleFn } = createStyles([
+  "color",
+  "background",
+  "fontSize",
+  "fontFamily"
+]);
 export default class Editor extends React.Component {
   constructor(props) {
     super(props);
@@ -40,13 +45,19 @@ export default class Editor extends React.Component {
     return false;
   };
 
-  toggleColor = (target, color) => {
+  toggleCustomStyle = (target, style) => {
     const { editorState } = this.props;
     if (target === "color") {
-      this.onChangeEditorState(styles.color.toggle(editorState, color));
+      this.onChangeEditorState(styles.color.toggle(editorState, style));
     }
     if (target === "background") {
-      this.onChangeEditorState(styles.background.toggle(editorState, color));
+      this.onChangeEditorState(styles.background.toggle(editorState, style));
+    }
+    if (target === "fontSize") {
+      this.onChangeEditorState(styles.fontSize.toggle(editorState, style));
+    }
+    if (target === "fontFamily") {
+      this.onChangeEditorState(styles.fontFamily.toggle(editorState, style));
     }
   };
 
@@ -61,11 +72,13 @@ export default class Editor extends React.Component {
     return (
       <div className="editor-warper">
         <Toolbar
+          styles={styles}
           editorState={editorState}
-          toggleColor={this.toggleColor}
+          toggleCustomStyle={this.toggleCustomStyle}
           onChangeEditorState={this.onChangeEditorState}
           isFocused={isFocused}
           isFocusedHandler={this.isFocusedHandler}
+          focus={this.focus}
         />
         <div className="editor-container" onClick={this.focus}>
           <DraftEditor

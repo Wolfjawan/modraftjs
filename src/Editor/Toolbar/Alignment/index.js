@@ -17,7 +17,7 @@ const Alignment = props => {
     <Fragment>
       {ALIGN_TYPES.map(type => (
         <StyleButton
-          key={type.label}
+          key={type.style}
           active={type.style === blockType}
           onToggle={onToggle}
           {...type}
