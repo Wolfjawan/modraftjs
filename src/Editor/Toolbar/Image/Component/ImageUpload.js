@@ -1,7 +1,6 @@
 import React from "react";
 
 export default ({
-  classNames,
   fileUploadClick,
   onDragEnter,
   stopPropagation,
@@ -16,9 +15,8 @@ export default ({
         onDragEnter={onDragEnter}
         onDragOver={stopPropagation}
         onDrop={onImageDrop}
-        className={classNames("toolbar-controls-image-modal-upload-option", {
-          "toolbar-controls-image-modal-upload-option-highlighted": dragEnter
-        })}
+        className={`toolbar-controls-image-modal-upload-option ${!dragEnter &&
+          "toolbar-controls-image-modal-upload-option-highlighted"}`}
       >
         <label
           htmlFor="file"

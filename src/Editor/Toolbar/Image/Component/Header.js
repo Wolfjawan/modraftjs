@@ -1,9 +1,8 @@
 import React from "react";
 
 export default ({
-  classNames,
   showImageURLOption,
-  showImageUploadOption,
+  // showImageUploadOption,
   uploadHighlighted
 }) => {
   return (
@@ -14,9 +13,8 @@ export default ({
       >
         URL
         <span
-          className={classNames("toolbar-controls-image-modal-header-label", {
-            "toolbar-controls-image-modal-header-label-highlighted": !uploadHighlighted
-          })}
+          className={`toolbar-controls-image-modal-header-label ${!uploadHighlighted &&
+            "toolbar-controls-image-modal-header-label-highlighted"}`}
         />
       </span>
       {/* <span
@@ -25,9 +23,8 @@ export default ({
       >
         Upload
         <span
-          className={classNames("toolbar-controls-image-modal-header-label", {
-            "toolbar-controls-image-modal-header-label-highlighted": uploadHighlighted
-          })}
+          className={`toolbar-controls-image-modal-header-label ${!uploadHighlighted &&
+            "toolbar-controls-image-modal-header-label-highlighted"}`}
         />
       </span> */}
     </div>

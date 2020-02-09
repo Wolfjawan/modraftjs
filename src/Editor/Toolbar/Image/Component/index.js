@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../Button";
@@ -151,14 +150,12 @@ class LayoutComponent extends Component {
             onClick={this.stopPropagation}
           >
             <HeaderButton
-              classNames={classNames}
               showImageURLOption={this.showImageURLOption}
               showImageUploadOption={this.showImageUploadOption}
               uploadHighlighted={uploadHighlighted}
             />
             {uploadHighlighted ? (
               <ImageUpload
-                classNames={classNames}
                 fileUploadClick={this.fileUploadClick}
                 onDragEnter={this.onDragEnter}
                 stopPropagation={this.stopPropagation}
