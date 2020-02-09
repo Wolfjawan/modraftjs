@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import {
   _convertContentStateToRawJS,
   EditorState,
@@ -8,27 +7,20 @@ import {
   _convertFromRow
 } from "./Editor";
 import ExampleState from "./example.json";
-
-class App extends Component {
+import "./index.css";
+class MoDraftJS extends Component {
   state = {
     editorState: EditorState.createEmpty(LinkDecorator),
     contentState: {},
-    html: ""
+    html: "",
+    expanded: false
   };
 
   onChange = e => {
     this.setState({ ...e });
   };
-
-  componentDidMount() {
-    const { editorState } = this.state;
-    this.setState({
-      editorState: _convertFromRow(editorState, ExampleState.contentState)
-    });
-  }
-
   render() {
-    const { contentState, html, editorState } = this.state;
+    const { contentState, html, editorState, expanded } = this.state;
     return (
       <div
         style={{
@@ -38,23 +30,70 @@ class App extends Component {
         }}
       >
         <div style={{ width: "90%" }}>
-          <Editor
-            onChange={this.onChange}
-            editorState={editorState}
-            onChangeHTML={this.onChangeHTML}
-          />
-          <h1> HTML state</h1>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: html
-            }}
-          />
-          <h1>Content State</h1>
-          <pre>{_convertContentStateToRawJS(contentState)}</pre>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div />
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <h2>Rich Text Editor</h2>
+            <div>
+              <span className="projects-modraftjs-dropdown">
+                <span
+                  onClick={() => this.setState({ expanded: !expanded })}
+                  className="projects-modraftjs-dropdown-btn"
+                >
+                  Examples
+                </span>
+                {expanded && (
+                  <div className="projects-modraftjs-dropdown-list">
+                    {ExampleState.contentState.map(content => {
+                      return (
+                        <span
+                          key={content.label}
+                          style={{ cursor: "pointer" }}
+                          onMouseDown={() =>
+                            this.setState({
+                              editorState: _convertFromRow(
+                                editorState,
+                                content.content
+                              )
+                            })
+                          }
+                        >
+                          {content.label}
+                        </span>
+                      );
+                    })}
+                  </div>
+                )}
+              </span>
+            </div>
+          </div>
+          <div>
+            <Editor
+              onChange={this.onChange}
+              editorState={editorState}
+              onChangeHTML={this.onChangeHTML}
+            />
+          </div>
+          {html && (
+            <div>
+              <h1> HTML state</h1>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: html
+                }}
+              />
+            </div>
+          )}
+          {_convertContentStateToRawJS(contentState) && (
+            <div>
+              <h1>Content State</h1>
+              <pre>{_convertContentStateToRawJS(contentState)}</pre>
+            </div>
+          )}
         </div>
       </div>
     );
   }
 }
-
-export default App;
+export default MoDraftJS;

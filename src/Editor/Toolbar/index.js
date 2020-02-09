@@ -8,6 +8,7 @@ import Video from "./Video";
 import Alignment from "./Alignment";
 import FontSize from "./FontSize";
 import FontFamily from "./FontFamily";
+import UnLink from "./UnLink";
 
 class Toolbar extends Component {
   render() {
@@ -32,6 +33,7 @@ class Toolbar extends Component {
         />
         <InlineStyleControls {...this.props} />
         <Link {...this.props} />
+        <UnLink {...this.props} />
         <Image {...this.props} />
         <Video {...this.props} />
       </div>

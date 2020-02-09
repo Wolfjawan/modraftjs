@@ -44,7 +44,7 @@ class TextEditor extends Component {
     const currentContent = editorState.getCurrentContent();
     const currentContentWithEntity = currentContent.createEntity(
       "LINK",
-      "SEGMENTED",
+      "MUTABLE",
       { url }
     );
     const entityKey = currentContentWithEntity.getLastCreatedEntityKey();
