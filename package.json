@@ -1,6 +1,6 @@
 {
   "name": "modraftjs",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "license": "(ISC OR GPL-3.0)",
   "main": "dist/index.js",
