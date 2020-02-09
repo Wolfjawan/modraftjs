@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./index.css";
 export default class StyleButton extends Component {
   onToggle = e => {
     e.preventDefault();
@@ -8,7 +8,7 @@ export default class StyleButton extends Component {
 
   render() {
     let className = "toolbar-item";
-    const { active, label, icon } = this.props;
+    const { active, label, icon, hover } = this.props;
     if (active) {
       className += " toolbar-item-active";
     }
@@ -16,6 +16,7 @@ export default class StyleButton extends Component {
     return (
       <span className={className} onMouseDown={this.onToggle}>
         {icon || label}
+        {hover ? <p>{label}</p> : null}
       </span>
     );
   }

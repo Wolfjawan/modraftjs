@@ -16,6 +16,7 @@ const InlineStyleControls = props => {
           active={currentStyle.has(type.style)}
           onToggle={onToggle}
           {...type}
+          hover={true}
         />
       ))}
     </Fragment>

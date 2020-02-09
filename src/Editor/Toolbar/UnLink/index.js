@@ -19,6 +19,8 @@ class UnLink extends Component {
       <Button
         onToggle={this.removeLink}
         icon={<FontAwesomeIcon icon={faUnlink} />}
+        label='UnLink'
+        hover={true}
       />
     );
   }

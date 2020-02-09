@@ -10,27 +10,27 @@ import {
 
 export const INLINE_STYLES = [
   {
-    label: "B",
+    label: "Bold",
     style: "BOLD",
     icon: <FontAwesomeIcon icon={faBold} />
   },
   {
-    label: "I",
+    label: "Italic",
     style: "ITALIC",
     icon: <FontAwesomeIcon icon={faItalic} />
   },
   {
-    label: "U",
+    label: "Underline",
     style: "UNDERLINE",
     icon: <FontAwesomeIcon icon={faUnderline} />
   },
   {
-    label: "s",
+    label: "Strike through",
     style: "STRIKETHROUGH",
     icon: <FontAwesomeIcon icon={faStrikethrough} />
   },
   {
-    label: "C",
+    label: "Code",
     style: "CODE",
     icon: <FontAwesomeIcon icon={faCode} />
   }

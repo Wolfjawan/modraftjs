@@ -34,6 +34,7 @@ const BlockStyleHeaders = props => {
           style={blockType && blockType === "unstyled" ? {} : { color: "#000" }}
         >
           {_btnLabel()} <FontAwesomeIcon icon={faArrowsAltV} />
+          <p>Heading Options</p>
         </span>
         {headersExpanded && (
           <div className="toolbar-controls-box-headers-content">

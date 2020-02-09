@@ -44,6 +44,8 @@ class LayoutComponent extends Component {
           onToggle={onExpandEvent}
           active={expanded}
           icon={<FontAwesomeIcon icon={faVideo} />}
+          label='Video'
+          hover={true}
         />
         {expanded ? (
           <div className="toolbar-controls-video-modal">

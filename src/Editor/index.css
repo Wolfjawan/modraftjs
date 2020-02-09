@@ -48,6 +48,7 @@
   display: flex;
 }
 .toolbar-item {
+  position: relative;
   width: fit-content;
   height: 20px;
   display: flex;

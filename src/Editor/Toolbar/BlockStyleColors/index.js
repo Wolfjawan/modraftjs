@@ -22,6 +22,8 @@ class InlineStyleControls extends Component {
           onToggle={() => this.colorsExpandedHandler(!colorsExpanded)}
           active={colorsExpanded}
           icon={<FontAwesomeIcon icon={faPen} />}
+          label='Colours'
+          hover={true}
         />
         {colorsExpanded && (
           <div className="toolbar-controls-box-colors-content">

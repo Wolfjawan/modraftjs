@@ -1,18 +1,15 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faListUl,
-  faListOl
-} from "@fortawesome/free-solid-svg-icons";
+import { faListUl, faListOl } from "@fortawesome/free-solid-svg-icons";
 
 export const BLOCK_TYPES = [
   {
-    label: "UL",
+    label: "Unordered List",
     style: "unordered-list-item",
     icon: <FontAwesomeIcon icon={faListUl} />
   },
   {
-    label: "OL",
+    label: "Ordered List",
     style: "ordered-list-item",
     icon: <FontAwesomeIcon icon={faListOl} />
   }

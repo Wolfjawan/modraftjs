@@ -29,6 +29,7 @@ const FontSize = props => {
           style={!currentFontSize ? {} : { color: "#000" }}
         >
           {_btnLabel()} <FontAwesomeIcon icon={faArrowsAltV} />
+          <p>Font Size</p>
         </span>
         {fontSizeExpanded && (
           <div className="toolbar-controls-box-font-size-content">

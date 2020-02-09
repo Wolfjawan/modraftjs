@@ -8,14 +8,17 @@ import {
 
 export const ALIGN_TYPES = [
   {
+    label:'Align Left',
     style: "align-left",
     icon: <FontAwesomeIcon icon={faAlignLeft} />
   },
   {
+    label:'Align Center',
     style: "align-center",
     icon: <FontAwesomeIcon icon={faAlignCenter} />
   },
   {
+    label:'Align Right',
     style: "align-right",
     icon: <FontAwesomeIcon icon={faAlignRight} />
   }

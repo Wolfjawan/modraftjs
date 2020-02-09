@@ -74,6 +74,8 @@ class TextEditor extends Component {
           onToggle={this.showForm}
           active={showLinkInput}
           icon={<FontAwesomeIcon icon={faLink} />}
+          label='Link'
+          hover={true}
         />
         {showLinkInput && (
           <div className="toolbar-controls-box-link-content">

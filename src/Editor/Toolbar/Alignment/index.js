@@ -21,6 +21,7 @@ const Alignment = props => {
           active={type.style === blockType}
           onToggle={onToggle}
           {...type}
+          hover={true}
         />
       ))}
     </Fragment>

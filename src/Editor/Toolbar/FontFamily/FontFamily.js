@@ -29,6 +29,7 @@ const FontFamily = props => {
           style={!currentFontFamily ? {} : { color: "#000" }}
         >
           {_btnLabel()} <FontAwesomeIcon icon={faArrowsAltV} />
+          <p>Font Family</p>
         </span>
         {fontFamilyExpanded && (
           <div className="toolbar-controls-box-font-type-content">
@@ -36,7 +37,11 @@ const FontFamily = props => {
               <span
                 key={type.label}
                 onMouseDown={e => onToggle(e, type.style, "fontFamily")}
-                style={{ fontFamily: type.style, borderBottom:'1px solid #3433333b', marginTop:'5px' }}
+                style={{
+                  fontFamily: type.style,
+                  borderBottom: "1px solid #3433333b",
+                  marginTop: "5px"
+                }}
                 className={
                   type.style === currentFontFamily ? "toolbar-item-active" : ""
                 }

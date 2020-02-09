@@ -142,6 +142,8 @@ class LayoutComponent extends Component {
           onToggle={onExpandEvent}
           active={expanded}
           icon={<FontAwesomeIcon icon={faImage} />}
+          label='Image'
+          hover={true}
         />
         {expanded ? (
           <div
