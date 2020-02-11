@@ -12,6 +12,9 @@
   flex-direction: column;
   height: fit-content;
 }
+.editor-warper button {
+  height: 21.5px !important;
+}
 .editor-container {
   display: flex;
   min-height: 40px;
