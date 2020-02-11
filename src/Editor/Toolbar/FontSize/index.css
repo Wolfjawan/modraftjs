@@ -1,5 +1,4 @@
 .toolbar-controls-box-font-size-btn {
-  min-width: 100px;
   background-color: #ffffff00;
   color: #868686;
   font-size: 18px;
@@ -31,6 +30,7 @@
 .toolbar-controls-box-font-size-content span {
   text-decoration: none;
   display: block;
+  cursor: pointer;
 }
 .toolbar-controls-box-font-size-content span:hover {
   border-radius: 5px;

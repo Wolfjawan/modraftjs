@@ -31,7 +31,8 @@
 
 .toolbar-controls-box-font-type-content span {
   display: block;
-  width: 200px;
+  width: 150px;
+  cursor: pointer;
 }
 .toolbar-controls-box-font-type-content span:hover {
   border-radius: 5px;

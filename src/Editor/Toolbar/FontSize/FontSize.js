@@ -21,14 +21,15 @@ const FontSize = props => {
     return btnLabel;
   };
   return (
-    <span className="toolbar-item">
+    <span>
       <div className="toolbar-controls-box-font-size">
         <span
           onClick={() => onFontSizeExpanded(!fontSizeExpanded)}
-          className="toolbar-controls-box-font-size-btn"
+          className="toolbar-item toolbar-controls-box-font-size-btn"
           style={!currentFontSize ? {} : { color: "#000" }}
         >
-          {_btnLabel()} <FontAwesomeIcon icon={faArrowsAltV} />
+          {_btnLabel()}-
+          <FontAwesomeIcon icon={faArrowsAltV} style={{ fontSize: "14px" }} />
           <p>Font Size</p>
         </span>
         {fontSizeExpanded && (
@@ -38,7 +39,9 @@ const FontSize = props => {
                 key={type.label}
                 onMouseDown={e => onToggle(e, type.style, "fontSize")}
                 className={
-                  type.style === currentFontSize ? "toolbar-item-option-active" : ""
+                  type.style === currentFontSize
+                    ? "toolbar-item-option-active"
+                    : ""
                 }
               >
                 {type.label}

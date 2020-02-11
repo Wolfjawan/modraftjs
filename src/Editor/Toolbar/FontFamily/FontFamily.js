@@ -21,14 +21,15 @@ const FontFamily = props => {
     return btnLabel;
   };
   return (
-    <span className="toolbar-item">
+    <span className="">
       <div className="toolbar-controls-box-font-type">
         <span
           onClick={() => onFontFamilyExpanded(!fontFamilyExpanded)}
-          className="toolbar-controls-box-font-type-btn"
+          className="toolbar-item"
           style={!currentFontFamily ? {} : { color: "#000" }}
         >
-          {_btnLabel()} <FontAwesomeIcon icon={faArrowsAltV} />
+          {_btnLabel()}-
+          <FontAwesomeIcon icon={faArrowsAltV} style={{ fontSize: "14px" }} />
           <p>Font Family</p>
         </span>
         {fontFamilyExpanded && (
@@ -39,11 +40,12 @@ const FontFamily = props => {
                 onMouseDown={e => onToggle(e, type.style, "fontFamily")}
                 style={{
                   fontFamily: type.style,
-                  borderBottom: "1px solid #3433333b",
                   marginTop: "5px"
                 }}
                 className={
-                  type.style === currentFontFamily ? "toolbar-item-option-active" : ""
+                  type.style === currentFontFamily
+                    ? "toolbar-item-option-active"
+                    : ""
                 }
               >
                 {type.label}

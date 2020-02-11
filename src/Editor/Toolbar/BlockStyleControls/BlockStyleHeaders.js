@@ -31,14 +31,15 @@ const BlockStyleHeaders = props => {
     return btnLabel;
   };
   return (
-    <span className="toolbar-item">
+    <span>
       <div className="toolbar-controls-box-headers">
         <span
           onClick={() => onHeadersExpanded(!headersExpanded)}
-          className="toolbar-controls-box-headers-btn"
+          className="toolbar-controls-box-headers-btn toolbar-item"
           style={blockType && blockType === "unstyled" ? {} : { color: "#000" }}
         >
-          {_btnLabel()} <FontAwesomeIcon icon={faArrowsAltV} />
+          {_btnLabel()}-
+          <FontAwesomeIcon icon={faArrowsAltV} style={{ fontSize: "14px" }} />
           <p>Heading Options</p>
         </span>
         {headersExpanded && (
@@ -49,7 +50,6 @@ const BlockStyleHeaders = props => {
                 type={type.style}
                 onMouseDown={() => onToggle(type.style)}
                 style={{
-                  borderBottom: "1px solid #3433333b",
                   marginTop: "5px",
                   display: "flex"
                 }}
