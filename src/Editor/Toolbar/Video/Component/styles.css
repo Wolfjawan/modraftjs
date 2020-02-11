@@ -89,8 +89,12 @@
   width: 90%;
   height: 35px;
   margin: 15px 0 12px;
-  border: 1px solid #d3d2d2;
-  border-radius: 2px;
+  background-color: #444343;
+  color: aliceblue;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 1px 1px #444343;
+  border-radius: 4px;
+  padding-left: 4px;
   font-size: 15px;
   padding: 0 5px;
 }
@@ -105,14 +109,20 @@
   margin: 0 5px;
   width: 75px;
   height: 30px;
-  border: 1px solid #f1f1f1;
-  border-radius: 2px;
+  background-color: #444343;
+  color: aliceblue;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 1px 1px #444343;
+  border-radius: 4px;
+  padding-left: 4px;
   cursor: pointer;
-  background: white;
   text-transform: capitalize;
 }
 .toolbar-controls-video-modal-btn:hover {
-  box-shadow: 1px 1px 0px #bfbdbd;
+  background-color: aliceblue;
+  color: #444343;
+  border: 1px solid #444343;
+  box-shadow: 0px 0px 1px 1px#fff;
 }
 .toolbar-controls-video-modal-btn:active {
   box-shadow: 1px 1px 0px #bfbdbd inset;
@@ -121,7 +131,7 @@
   outline: none !important;
 }
 .toolbar-controls-video-modal-btn:disabled {
-  background: #ece9e9;
+  background: #707070;
 }
 .toolbar-controls-video-modal-spinner {
   position: absolute;
@@ -134,8 +144,12 @@
 .toolbar-controls-video-modal-title-input {
   width: 95%;
   height: 20px;
-  border: 1px solid #d3d2d2;
-  border-radius: 2px;
+  background-color: #444343;
+  color: aliceblue;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 1px 1px #444343;
+  border-radius: 4px;
+  padding-left: 4px;
   font-size: 12px;
   padding-left: 5px;
 }
@@ -154,8 +168,12 @@
 .toolbar-controls-video-modal-size-input {
   width: 40%;
   height: 20px;
-  border: 1px solid #d3d2d2;
-  border-radius: 2px;
+  background-color: #444343;
+  color: aliceblue;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 1px 1px #444343;
+  border-radius: 4px;
+  padding-left: 4px;
   font-size: 12px;
   padding-left: 5px;
 }

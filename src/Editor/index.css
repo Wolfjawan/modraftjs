@@ -1,7 +1,7 @@
 *,
 ::after,
 ::before {
-  box-sizing: unset !important;
+  box-sizing: border-box !important;
 }
 .DraftEditor-root {
   width: 100%;

@@ -82,7 +82,6 @@ class TextEditor extends Component {
             <div style={{ display: "flex" }}>
               <input
                 ref="url_input"
-                style={{ width: "200px", height: "20px" }}
                 type="text"
                 value={url}
                 name="background"
@@ -91,18 +90,7 @@ class TextEditor extends Component {
                   this.setState({ url: e.target.value });
                 }}
               />
-              <button
-                style={{
-                  width: "fit-content",
-                  minHeight: "20px",
-                  cursor: "pointer",
-                  textAlign: "center",
-                  alignContent: "center"
-                }}
-                onMouseDown={this.setLink}
-              >
-                Save
-              </button>
+              <button onMouseDown={this.setLink}>Save</button>
             </div>
           </div>
         )}

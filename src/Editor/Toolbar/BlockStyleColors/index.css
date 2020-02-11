@@ -12,8 +12,8 @@
 }
 .toolbar-controls-box-colors-content {
   top: 20px;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 306px;
+  max-width: 306px;
   display: flex;
   flex-wrap: wrap;
   position: absolute;
@@ -25,10 +25,32 @@
   padding: 2px;
   z-index: 1;
 }
+.toolbar-controls-box-colors-content input {
+  background-color: #444343;
+  color: aliceblue;
+  border: unset;
+  border-bottom: 1px solid #fff;
+  padding: 2px;
+  font-size: 14px;
+}
+.toolbar-controls-box-colors-content button {
+  background-color: #444343;
+  color: aliceblue;
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+.toolbar-controls-box-colors-content button:hover {
+  background-color: aliceblue;
+  color: #444343;
+  border: 1px solid #444343;
+  box-shadow: 0px 0px 1px 1px #fff;
+}
+.toolbar-controls-box-colors-content button:disabled {
+  background-color: #a3a3a3;
+}
 .toolbar-controls-box-colors-content div {
   width: 100%;
 }
-
 
 .toolbar-controls-box-colors-item {
   width: 20px;

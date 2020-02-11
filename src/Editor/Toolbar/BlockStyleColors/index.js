@@ -14,6 +14,13 @@ class InlineStyleControls extends Component {
   colorsExpandedHandler = colorsExpanded => {
     this.setState({ colorsExpanded });
   };
+  disabledButton = style => {
+    return INLINE_COLORS.map(type => {
+      if (type.style === style) {
+        return true;
+      } else return false;
+    }).includes(true);
+  };
   render() {
     const { color, background, colorsExpanded } = this.state;
     return (
@@ -22,7 +29,7 @@ class InlineStyleControls extends Component {
           onToggle={() => this.colorsExpandedHandler(!colorsExpanded)}
           active={colorsExpanded}
           icon={<FontAwesomeIcon icon={faPen} />}
-          label='Colours'
+          label="Colours"
           hover={true}
         />
         {colorsExpanded && (
@@ -32,7 +39,7 @@ class InlineStyleControls extends Component {
                 display: "flex",
                 height: "20px",
                 fontSize: "14px",
-                marginTop: "10px"
+                margin: "10px 0 4px 0"
               }}
             >
               <span style={{ width: "fit-content", fontSize: "14px" }}>
@@ -57,18 +64,23 @@ class InlineStyleControls extends Component {
                       backgroundColor: color
                     }}
                   />
-                  <button
-                    style={{
-                      height: "20px",
-                      cursor: "pointer",
-                      marginLeft: "5px"
-                    }}
-                    onMouseDown={e => {
-                      this.onToggle(e, color, "color");
-                    }}
-                  >
-                    Go
-                  </button>
+                  {this.disabledButton(color) ? (
+                    ""
+                  ) : (
+                    <button
+                      style={{
+                        height: "20px",
+                        cursor: "pointer",
+                        marginLeft: "5px"
+                      }}
+                      disabled={this.disabledButton(color)}
+                      onMouseDown={e => {
+                        this.onToggle(e, color, "color");
+                      }}
+                    >
+                      Go
+                    </button>
+                  )}
                 </Fragment>
               )}
             </div>
@@ -87,7 +99,7 @@ class InlineStyleControls extends Component {
                 display: "flex",
                 height: "20px",
                 fontSize: "14px",
-                marginTop: "10px"
+                margin: "10px 0 4px 0"
               }}
             >
               <span style={{ width: "fit-content", fontSize: "14px" }}>
@@ -112,18 +124,23 @@ class InlineStyleControls extends Component {
                       backgroundColor: background
                     }}
                   />
-                  <button
-                    style={{
-                      height: "20px",
-                      cursor: "pointer",
-                      marginLeft: "5px"
-                    }}
-                    onMouseDown={e => {
-                      this.onToggle(e, background, "background");
-                    }}
-                  >
-                    Go
-                  </button>
+                  {this.disabledButton(background) ? (
+                    ""
+                  ) : (
+                    <button
+                      style={{
+                        height: "20px",
+                        cursor: "pointer",
+                        marginLeft: "5px"
+                      }}
+                      disabled={this.disabledButton(background)}
+                      onMouseDown={e => {
+                        this.onToggle(e, background, "background");
+                      }}
+                    >
+                      Go
+                    </button>
+                  )}
                 </Fragment>
               )}
             </div>
