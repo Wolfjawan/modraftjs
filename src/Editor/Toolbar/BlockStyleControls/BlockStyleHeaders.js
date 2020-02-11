@@ -1,12 +1,17 @@
 import React from "react";
-import StyleButton from "../Button";
+// import StyleButton from "../Button";
 import { RichUtils } from "draft-js";
 import { BLOCK_TYPES_HEADERS } from "./constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsAltV } from "@fortawesome/free-solid-svg-icons";
 
 const BlockStyleHeaders = props => {
-  const { editorState, onChangeEditorState, headersExpanded, onHeadersExpanded } = props;
+  const {
+    editorState,
+    onChangeEditorState,
+    headersExpanded,
+    onHeadersExpanded
+  } = props;
   const onToggle = blockType => {
     onChangeEditorState(RichUtils.toggleBlockType(editorState, blockType));
   };
@@ -39,12 +44,21 @@ const BlockStyleHeaders = props => {
         {headersExpanded && (
           <div className="toolbar-controls-box-headers-content">
             {BLOCK_TYPES_HEADERS.map(type => (
-              <StyleButton
+              <span
                 key={type.label}
-                active={type.style === blockType}
-                onToggle={onToggle}
-                {...type}
-              />
+                type={type.style}
+                onMouseDown={() => onToggle(type.style)}
+                style={{
+                  borderBottom: "1px solid #3433333b",
+                  marginTop: "5px",
+                  display: "flex"
+                }}
+                className={
+                  type.style === blockType ? "toolbar-item-option-active" : ""
+                }
+              >
+                {type.label}
+              </span>
             ))}
           </div>
         )}

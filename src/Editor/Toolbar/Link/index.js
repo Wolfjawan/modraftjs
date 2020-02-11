@@ -74,7 +74,7 @@ class TextEditor extends Component {
           onToggle={this.showForm}
           active={showLinkInput}
           icon={<FontAwesomeIcon icon={faLink} />}
-          label='Link'
+          label="Link"
           hover={true}
         />
         {showLinkInput && (
@@ -82,7 +82,7 @@ class TextEditor extends Component {
             <div style={{ display: "flex" }}>
               <input
                 ref="url_input"
-                style={{ width: "200px", marginLeft: "4px", height: "20px" }}
+                style={{ width: "200px", height: "20px" }}
                 type="text"
                 value={url}
                 name="background"

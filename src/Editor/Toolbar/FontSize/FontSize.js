@@ -38,7 +38,7 @@ const FontSize = props => {
                 key={type.label}
                 onMouseDown={e => onToggle(e, type.style, "fontSize")}
                 className={
-                  type.style === currentFontSize ? "toolbar-item-active" : ""
+                  type.style === currentFontSize ? "toolbar-item-option-active" : ""
                 }
               >
                 {type.label}

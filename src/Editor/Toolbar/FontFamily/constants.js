@@ -6,7 +6,7 @@ export const FONT_FAMILY = [
     style: "Impact"
   },
   {
-    label: "Times New Roman",
+    label: "Times NR",
     style: "'Times New Roman', Times, serif"
   },
   {
@@ -18,15 +18,15 @@ export const FONT_FAMILY = [
     style: "monospace"
   },
   {
-    label: "FreeMono, monospace",
+    label: "FreeMono-MS",
     style: "FreeMono, monospace"
   },
   {
-    label: "OCR A Std, monospace",
+    label: "OCR A Std-MS",
     style: "OCR A Std, monospace"
   },
   {
-    label: "Andale Mono, monospace",
+    label: "Andale Mono-MS",
     style: "Andale Mono, monospace"
   },
   {
@@ -34,11 +34,11 @@ export const FONT_FAMILY = [
     style: "cursive"
   },
   {
-    label: "Comic Sans MS, Comic Sans, cursive",
+    label: "CS-MS cursive",
     style: "Comic Sans MS, Comic Sans, cursive"
   },
   {
-    label: "Snell Roundhand, cursive",
+    label: "SR, cursive",
     style: "Snell Roundhand, cursive"
   },
   {
@@ -46,19 +46,19 @@ export const FONT_FAMILY = [
     style: "fantasy"
   },
   {
-    label: "Marker Felt, fantasy",
+    label: "MF, fantasy",
     style: "Marker Felt, fantasy"
   },
   {
-    label: "Stencil Std, fantasy",
+    label: "SS, fantasy",
     style: "Stencil Std, fantasy"
   },
   {
-    label: "Impact, fantasy",
+    label: "I, fantasy",
     style: "Impact, fantasy"
   },
   {
-    label: "Luminari, fantasy",
+    label: "L, fantasy",
     style: "Luminari, fantasy"
   }
 ];

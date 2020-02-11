@@ -71,15 +71,6 @@ export default class Editor extends React.Component {
     });
     return (
       <div className="editor-warper">
-        <Toolbar
-          styles={styles}
-          editorState={editorState}
-          toggleCustomStyle={this.toggleCustomStyle}
-          onChangeEditorState={this.onChangeEditorState}
-          isFocused={isFocused}
-          isFocusedHandler={this.isFocusedHandler}
-          focus={this.focus}
-        />
         <div className="editor-container" onClick={this.focus}>
           <DraftEditor
             editorState={editorState}
@@ -92,6 +83,15 @@ export default class Editor extends React.Component {
             spellCheck={true}
           />
         </div>
+        <Toolbar
+          styles={styles}
+          editorState={editorState}
+          toggleCustomStyle={this.toggleCustomStyle}
+          onChangeEditorState={this.onChangeEditorState}
+          isFocused={isFocused}
+          isFocusedHandler={this.isFocusedHandler}
+          focus={this.focus}
+        />
       </div>
     );
   }

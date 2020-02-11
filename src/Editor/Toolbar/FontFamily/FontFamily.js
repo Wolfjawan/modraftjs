@@ -43,7 +43,7 @@ const FontFamily = props => {
                   marginTop: "5px"
                 }}
                 className={
-                  type.style === currentFontFamily ? "toolbar-item-active" : ""
+                  type.style === currentFontFamily ? "toolbar-item-option-active" : ""
                 }
               >
                 {type.label}

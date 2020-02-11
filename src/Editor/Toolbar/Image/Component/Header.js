@@ -13,8 +13,7 @@ export default ({
       >
         URL
         <span
-          className={`toolbar-controls-image-modal-header-label ${!uploadHighlighted &&
-            "toolbar-controls-image-modal-header-label-highlighted"}`}
+          className={`toolbar-controls-image-modal-header-label`}
         />
       </span>
       {/* <span
@@ -23,8 +22,7 @@ export default ({
       >
         Upload
         <span
-          className={`toolbar-controls-image-modal-header-label ${!uploadHighlighted &&
-            "toolbar-controls-image-modal-header-label-highlighted"}`}
+          className={`toolbar-controls-image-modal-header-label`}
         />
       </span> */}
     </div>

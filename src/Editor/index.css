@@ -9,12 +9,12 @@
 }
 .editor-container {
   display: flex;
-  min-height: 5em;
-  border-radius: 0 0 3px 3px;
+  min-height: 40px;
+  border-radius: 3px 3px 0 0;
   background-color: #fff;
   padding: 5px;
   font-size: 16px;
-  box-shadow: 0px 0px 3px 1px rgba(36, 36, 36, 0.17);
+  box-shadow: 0px 0px 0px 1px rgba(36, 36, 36, 0.17);
   word-break: break-all;
 }
 .toolbar-container {
@@ -24,8 +24,8 @@
   min-height: 20px;
   padding: 5px 7px;
   margin-bottom: 1px;
-  border-radius: 2px 2px 0 0;
-  box-shadow: 0px 0px 3px 1px rgba(15, 15, 15, 0.17);
+  border-radius: 0 0 2px 2px;
+  box-shadow: 0px 0px 0px 1px rgba(15, 15, 15, 0.17);
 }
 .editor-blockquote {
   border-left: 5px solid #eee;
@@ -68,6 +68,15 @@
   transform: translateY(1px);
   color: #000000;
   background-color: #dfdfdf;
+}
+.toolbar-item-option-active {
+  color: #444343;
+  background-color: aliceblue;
+  border: 1px solid rgb(77, 76, 76);
+  box-shadow: 0px 0px 1px 1px #d1cfcf;
+  border-radius: 5px;
+  padding: 0px 3px;
+  margin: 3px 0;
 }
 .align-right div {
   text-align: right;

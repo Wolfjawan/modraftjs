@@ -4,7 +4,6 @@ export default ({ updateValue, alt, height, width }) => {
   return (
     <Fragment>
       <div className="toolbar-controls-image-modal-size">
-        <span className="toolbar-controls-image-modal-alt-lbl">Alt Text</span>
         <input
           onChange={updateValue}
           onBlur={updateValue}
@@ -15,7 +14,6 @@ export default ({ updateValue, alt, height, width }) => {
         />
         <span className="toolbar-controls-image-mandatory-sign">*</span>
       </div>
-
       <div className="toolbar-controls-image-modal-size">
         &#8597;&nbsp;
         <input

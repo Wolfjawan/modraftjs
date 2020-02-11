@@ -3,8 +3,6 @@ import { RichUtils } from "draft-js";
 import Button from "../Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUnlink } from "@fortawesome/free-solid-svg-icons";
-import "./index.css";
-
 class UnLink extends Component {
   removeLink = () => {
     const { onChangeEditorState, editorState } = this.props;

@@ -10,15 +10,15 @@ export default ({
 }) => {
   return (
     <span className="toolbar-controls-image-modal-btn-section">
+      <button className="toolbar-controls-image-modal-btn" onClick={doCollapse}>
+        Cancel
+      </button>
       <button
         className="toolbar-controls-image-modal-btn"
         onClick={addImageFromState}
         disabled={!imgSrc || !height || !width || !alt}
       >
         Add
-      </button>
-      <button className="toolbar-controls-image-modal-btn" onClick={doCollapse}>
-        Cancel
       </button>
     </span>
   );

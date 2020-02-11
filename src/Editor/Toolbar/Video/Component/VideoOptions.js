@@ -4,7 +4,6 @@ export default ({ updateValue, height, width, title }) => {
   return (
     <Fragment>
       <div className="toolbar-controls-video-modal-size">
-        <span className="toolbar-controls-video-modal-title-lbl">Title</span>
         <input
           onChange={updateValue}
           onBlur={updateValue}
