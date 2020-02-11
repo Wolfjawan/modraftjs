@@ -1,23 +1,9 @@
 import React from "react";
 
-export default ({
-  fileUploadClick,
-  onDragEnter,
-  stopPropagation,
-  onImageDrop,
-  dragEnter,
-  imgSrc,
-  selectImage
-}) => {
+export default ({ selectImage, imgSrc, showImageLoading }) => {
   return (
-    <div onClick={fileUploadClick}>
-      <div
-        onDragEnter={onDragEnter}
-        onDragOver={stopPropagation}
-        onDrop={onImageDrop}
-        className={`toolbar-controls-image-modal-upload-option ${!dragEnter &&
-          "toolbar-controls-image-modal-upload-option-highlighted"}`}
-      >
+    <div>
+      <div className="toolbar-controls-image-modal-upload-option">
         <label
           htmlFor="file"
           className="toolbar-controls-image-modal-upload-option-label"
@@ -28,8 +14,10 @@ export default ({
               alt={imgSrc}
               className="toolbar-controls-image-modal-upload-option-image-preview"
             />
+          ) : showImageLoading ? (
+            "Lodging"
           ) : (
-            imgSrc || "Upload"
+            "Upload"
           )}
         </label>
       </div>

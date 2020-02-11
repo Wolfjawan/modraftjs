@@ -19,6 +19,9 @@ class MoDraftJS extends Component {
   onChange = e => {
     this.setState({ ...e });
   };
+  uploadImage = file => {
+    console.log(file);
+  };
   render() {
     const { contentState, html, editorState, expanded } = this.state;
     return (
@@ -73,6 +76,7 @@ class MoDraftJS extends Component {
               onChange={this.onChange}
               editorState={editorState}
               onChangeHTML={this.onChangeHTML}
+              uploadImage={this.uploadImage}
             />
           </div>
           {html && (

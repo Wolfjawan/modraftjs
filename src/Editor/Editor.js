@@ -64,7 +64,7 @@ export default class Editor extends React.Component {
   getEditorState = () => this.props.editorState;
   render() {
     const { isFocused } = this.state;
-    const { editorState } = this.props;
+    const { editorState, uploadImage } = this.props;
     const blockRendererFn = MediaBlockRenderFunc({
       getEditorState: this.getEditorState,
       onChangeEditorState: this.onChangeEditorState
@@ -91,6 +91,7 @@ export default class Editor extends React.Component {
           isFocused={isFocused}
           isFocusedHandler={this.isFocusedHandler}
           focus={this.focus}
+          uploadImage={uploadImage}
         />
       </div>
     );

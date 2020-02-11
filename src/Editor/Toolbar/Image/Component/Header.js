@@ -1,30 +1,32 @@
 import React from "react";
 
-export default ({
-  showImageURLOption,
-  // showImageUploadOption,
-  uploadHighlighted
-}) => {
+export default ({ showImageOptions, uploadHighlighted, uploadImage }) => {
   return (
     <div className="toolbar-controls-image-modal-header">
       <span
-        onClick={showImageURLOption}
+        onClick={() => {
+          showImageOptions(false);
+        }}
+        style={{
+          borderBottomColor: uploadHighlighted ? "#f1f1f1" : "#008cff"
+        }}
         className="toolbar-controls-image-modal-header-option"
       >
         URL
-        <span
-          className={`toolbar-controls-image-modal-header-label`}
-        />
       </span>
-      {/* <span
-        onClick={showImageUploadOption}
-        className="toolbar-controls-image-modal-header-option"
-      >
-        Upload
+      {uploadImage && (
         <span
-          className={`toolbar-controls-image-modal-header-label`}
-        />
-      </span> */}
+          onClick={() => {
+            showImageOptions(true);
+          }}
+          style={{
+            borderBottomColor: !uploadHighlighted ? "#f1f1f1" : "#008cff"
+          }}
+          className="toolbar-controls-image-modal-header-option"
+        >
+          Upload
+        </span>
+      )}
     </div>
   );
 };

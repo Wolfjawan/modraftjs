@@ -12,50 +12,15 @@ import "./styles.css";
 class LayoutComponent extends Component {
   state = {
     imgSrc: "",
-    dragEnter: true,
-    uploadHighlighted: false,
     showImageLoading: false,
     height: "300",
     width: "500",
     alt: ""
   };
 
-  onDragEnter = event => {
-    this.stopPropagation(event);
+  showImageOptions = uploadHighlighted => {
     this.setState({
-      dragEnter: true
-    });
-  };
-
-  onImageDrop = event => {
-    event.preventDefault();
-    event.stopPropagation();
-    this.setState({
-      dragEnter: false
-    });
-    let data;
-    let dataIsItems;
-    if (event.dataTransfer.items) {
-      data = event.dataTransfer.items;
-      dataIsItems = true;
-    } else {
-      data = event.dataTransfer.files;
-      dataIsItems = false;
-    }
-    for (let i = 0; i < data.length; i += 1) {
-      if (
-        (!dataIsItems || data[i].kind === "file") &&
-        data[i].type.match("^image/")
-      ) {
-        const file = dataIsItems ? data[i].getAsFile() : data[i];
-        this.uploadImage(file);
-      }
-    }
-  };
-
-  showImageUploadOption = () => {
-    this.setState({
-      uploadHighlighted: true
+      uploadHighlighted
     });
   };
 
@@ -66,16 +31,9 @@ class LayoutComponent extends Component {
     onChange(imgSrc, height, width, alt);
   };
 
-  showImageURLOption = () => {
-    this.setState({
-      uploadHighlighted: false
-    });
-  };
-
   toggleShowImageLoading = () => {
-    const showImageLoading = !this.state.showImageLoading;
     this.setState({
-      showImageLoading
+      showImageLoading: true
     });
   };
 
@@ -87,53 +45,35 @@ class LayoutComponent extends Component {
 
   selectImage = event => {
     if (event.target.files && event.target.files.length > 0) {
-      this.uploadImage(event.target.files[0]);
+      this._uploadImage(event.target.files[0]);
     }
   };
 
-  uploadImage = file => {
+  _uploadImage = async file => {
     this.toggleShowImageLoading();
-    const { uploadCallback } = this.props.config;
-    uploadCallback(file)
-      .then(({ data }) => {
-        this.setState({
-          showImageLoading: false,
-          dragEnter: false,
-          imgSrc: data.link || data.url
-        });
-        this.fileUpload = false;
-      })
-      .catch(() => {
-        this.setState({
-          showImageLoading: false,
-          dragEnter: false
-        });
+    const { uploadImage } = this.props;
+    try {
+      const response = await uploadImage(file);
+      this.setState({
+        showImageLoading: false,
+        imgSrc: response.link || response.url
       });
-  };
-
-  fileUploadClick = event => {
-    this.fileUpload = true;
-    event.stopPropagation();
-  };
-
-  stopPropagation = event => {
-    if (!this.fileUpload) {
-      event.preventDefault();
-      event.stopPropagation();
-    } else {
-      this.fileUpload = false;
+    } catch (err) {
+      this.setState({
+        showImageLoading: false
+      });
     }
   };
 
   render() {
-    const { expanded, onExpandEvent, doCollapse } = this.props;
+    const { expanded, onExpandEvent, doCollapse, uploadImage } = this.props;
     const {
       imgSrc,
       uploadHighlighted,
-      dragEnter,
       height,
       width,
-      alt
+      alt,
+      showImageLoading
     } = this.state;
     return (
       <div className="toolbar-controls-image-wrapper">
@@ -141,7 +81,7 @@ class LayoutComponent extends Component {
           onToggle={onExpandEvent}
           active={expanded}
           icon={<FontAwesomeIcon icon={faImage} />}
-          label='Image'
+          label="Image"
           hover={true}
         />
         {expanded ? (
@@ -150,19 +90,15 @@ class LayoutComponent extends Component {
             onClick={this.stopPropagation}
           >
             <HeaderButton
-              showImageURLOption={this.showImageURLOption}
-              showImageUploadOption={this.showImageUploadOption}
+              showImageOptions={this.showImageOptions}
               uploadHighlighted={uploadHighlighted}
+              uploadImage={uploadImage}
             />
             {uploadHighlighted ? (
               <ImageUpload
-                fileUploadClick={this.fileUploadClick}
-                onDragEnter={this.onDragEnter}
-                stopPropagation={this.stopPropagation}
-                onImageDrop={this.onImageDrop}
-                dragEnter={dragEnter}
-                imgSrc={imgSrc}
                 selectImage={this.selectImage}
+                imgSrc={imgSrc}
+                showImageLoading={showImageLoading}
               />
             ) : (
               <ImageURL imgSrc={imgSrc} updateValue={this.updateValue} />

@@ -28,6 +28,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-bottom: 4px solid;
 }
 .toolbar-controls-image-modal-header-label {
   width: 80px;

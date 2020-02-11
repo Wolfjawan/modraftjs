@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { AtomicBlockUtils } from "draft-js";
 import ImageLayouts from "./Component";
 
@@ -34,8 +34,7 @@ class ImageControl extends Component {
         src,
         height,
         width,
-        alt,
-        alignment: "center"
+        alt
       })
       .getLastCreatedEntityKey();
     const newEditorState = AtomicBlockUtils.insertAtomicBlock(
@@ -53,17 +52,17 @@ class ImageControl extends Component {
     }
   }
   render() {
+    const { uploadImage } = this.props;
     const { expanded } = this.state;
     return (
-      <Fragment>
-        <ImageLayouts
-          onChange={this.addImage}
-          expanded={expanded}
-          onExpandEvent={this.onExpandEvent}
-          doExpand={this.doExpand}
-          doCollapse={this.doCollapse}
-        />
-      </Fragment>
+      <ImageLayouts
+        onChange={this.addImage}
+        expanded={expanded}
+        onExpandEvent={this.onExpandEvent}
+        doExpand={this.doExpand}
+        doCollapse={this.doCollapse}
+        uploadImage={uploadImage}
+      />
     );
   }
 }
